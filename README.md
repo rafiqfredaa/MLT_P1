@@ -54,7 +54,6 @@ Informasi dataset :
 | Jenis dan Ukuran Berkas | CSV (1.04 MB)                                                                           |
 
 Atribut pada dataset :
-
 - Fitur
   - Gold ETF :- Date, Open, High, Low, Close and Volume.
   - S&P 500 Index :- 'SP_open', 'SP_high', 'SP_low', 'SP_close', 'SP_Ajclose', 'SP_volume'
@@ -71,15 +70,12 @@ Atribut pada dataset :
   - US Dollar Index : 'USDI_Price', 'USDI_Open', 'USDI_High','USDI_Low', 'USDI_Volume', 'USDI_Trend'
   - Gold Miners ETF :- 'GDX_Open', 'GDX_High', 'GDX_Low', 'GDX_Close', 'GDX_Adj Close', 'GDX_Volume'
   - Oil ETF USO :- 'USO_Open','USO_High', 'USO_Low', 'USO_Close', 'USO_Adj Close', 'USO_Volume'
-
 - Variabel target
   - Gold ETF :- Adjusted Close  
 
 Atribut pada dataset yang dipilih untuk digunakan untuk mengembangkan model :
-
 - Fitur
   - Open, High, Low, Close
-
 - Variabel target
   - Adj Close
 
