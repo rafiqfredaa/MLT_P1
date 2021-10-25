@@ -34,6 +34,10 @@ Berikut ini adalah tujuan yang akan dicapai :
 - Membuat model machine learning terbaik untuk memprediksi harga penjualan emas 
 
 ### Solution Statements (pernyataan solusi-dua atau lebih)
+Berikut ini adalah solusi yang mungkin dapat dilakukan :
+- Melihat persebaran data pada data penjualan emas dan memilih variabel utama yang berhubungan langsung dengan harga penjualan emas.
+- Pemrosesan terhadap data penjualan emas yang dapat dilakukan antara lain, melihat apakah ada data yang hilang/kosong, memvisualisasikan data, melakukan beberapa perhitungan (MACD, RSI, SMA, dan Bollinger Bands), normalisasi, encoding fitur dan membagi data menjadi data latih dan data uji. 
+- Membuat beberapa algoritma model seperti Decision Tree, Support Vector Regressor, Random Forest dan sebagainya, serta menerapkan hyperparamater tuning pada beberap model.
 
 ## Data Understanding
 - memberikan informasi mengenai data yang digunakan dan sumber data, menguraikan seluruh variabel atau fitur pada data, visualisasi data
