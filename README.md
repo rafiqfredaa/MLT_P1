@@ -21,7 +21,18 @@ Tantangan pada proyek ini adalah untuk secara akurat memprediksi haarga penutupa
 - menjelaskan proses klarifikasi masalah dan manjagujakan minimal satu solusi untuk menyelesaikan permasalahan
 
 ### Problem (pernyataan masalah)
+
+Dari latar belakang masalah di atas, berikut merupakan rumusan masalah yang didapatkan :
+- Dari banyaknya fitur yang ada fitur manakah yang memiliki hubungan atau pengaruh terhadap data harga penjualan emas?
+- Bagaimana cara pemrosesan data yang dapat dilakukan pada data harga penjualan emas?
+- Bagaimana cara membuat model machine learning yang cocok untuk data harga penjualan emas?
+
 ### Goals (tujuan)
+Berikut ini adalah tujuan yang akan dicapai :
+- Memilih fitur-fitur yang memiliki hubungan atau pengaruh terhadap data harga penjualan emas
+- Melakukan pemrosesan terhadap data harga penjualan eams
+- Membuat model machine learning terbaik untuk memprediksi harga penjualan emas 
+
 ### Solution Statements (pernyataan solusi-dua atau lebih)
 
 ## Data Understanding
