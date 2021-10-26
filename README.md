@@ -81,11 +81,15 @@ Atribut pada dataset yang dipilih untuk digunakan untuk mengembangkan model :
 
 Kemudian dilakukan perhitungan pada data variabel target antara lain :
 - MACD (Moving Average Convergence Divergence), sebuah indikator dalam analisis teknikal yang menggambarkan hubungan antara dua moving average dalam sebuah tren harga aset. Adapum, moving average merupakan rerata harga, baik pembukaan atau penutupan perdagangan setiap harinya yang digambarkan dalam sebuah garis tren. Kegunaan untuk memahami kapan harga aset tersebut akan bersifat bullish atau bearish. Pada dasarnya, MACD menghitung Exponential Moving Average (EMA) selama 12 hari dan 26 hari terakhir. EMA adalah jenis moving average yang menitikberatkan pada bobot dan signifikansi dari data yang paling baru. Rumus MACD sebagai berikut.
+
 ![MACD](https://user-images.githubusercontent.com/68459186/138883468-f5dd57fb-f173-4bb3-89d5-55c1af4242d7.png)
+
 Dengan demikian, MACD akan bernilai positif jika EMa 12 hari lebih besar dari EMA 26 hari dan berlaku sebaliknya. 
 
 - RSI (Relative Strength Index), indikator yang digunakan dalam mengukur besarnya volatilitas harga sebuah aset. Indikator ini dilakukan untuk mengevaluasi apakah aset tersebut terbilang dalam posisi jenuh beli (overbounght) atau jenuh jual (oversold). RSI ditampilkan sebagai osilator (grafik garis yang bergerak antara dua titik ekstrem) dengan nilai berada di antara 0 hingga 100. Rumus RSI sebagai berikut.
+
 ![RSI](https://user-images.githubusercontent.com/68459186/138889935-e40b7183-a5bc-411a-a4f9-7b9a0e8a9ab4.png)
+
 Rata-rata keuntungan atau kerugian yang digunakan dalam perhitungan adalah presentase keuntungan atau kerugian rata-rata selama periode kilas balik (dua titik yang dipilih untuk dibandingkan, bisa selama 7 hari, bisa selama 14 hari, dst).
 
 - SMA
