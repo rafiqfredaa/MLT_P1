@@ -92,8 +92,48 @@ Kemudian dilakukan perhitungan pada data variabel target antara lain :
 
   Rata-rata keuntungan atau kerugian yang digunakan dalam perhitungan adalah presentase keuntungan atau kerugian rata-rata selama periode kilas balik (dua titik yang dipilih untuk dibandingkan, bisa selama 7 hari, bisa selama 14 hari, dst).
 
-- SMA
-- Bolliger Bands
+- SMA (Simple Moving Average), bentuk simpel dari Moving Average. Moving Average untuk memberi petunjuk mengenai arah tren harga sebuah aset di masa depan. Pada Simpel Moving Average indikator dihitung dengan menggunakan rerata aritmatika dari salah satu set nilai tertentu, biasanya harga penutupan dengan jumlah periode dalam kisaran itu. Dengan kata lain, serangkaian data aset digabungkan dulu bersama-sama untuk kemudian dibagi menjadi harga aset di set tertentu tersebut. Rumus SMA sebagai berikut.
+  ![SMA](https://user-images.githubusercontent.com/68459186/138896477-358fc5e2-a4af-49e7-a493-95a3da06d5a8.png)
+
+- Bolliger Band, alat analisis teknis yang dikembangkan oleh John Bollinger untuk menghasilkan sinyak oversold atau overbought. Ada tiga baris yang membentuk Bollinger Bands, SMA (middle band), upper band, dan lower band. Upper dan lower band biasanya 2 standar deviasi +/- dari rata-rata bergerak sederhana selama 20 hari, tetapi dapat dimodifikasi. Bollinger band dimanfaatkan untuk menganalisis pergerakan harga sebuah aset atau komoditas tertentu. Rumus bollinger band sebagai berikut.
+  ![image](https://user-images.githubusercontent.com/68459186/138906534-cc3772a6-99e3-4ada-87a1-17bb252b8a49.png)
+
+Sehingga fitur yang digunakan bertambah dengan adanya hasil perhitungan yang dilakukan, maka variabel yang digunakan antara lain :
+- open, high, low, close, adj close, adj close_returns, rsi_adj close, upper_band_adj close, lower_band_adj close, dif_adj close, dan macd_adj close.
+
+Berikut ini merupakan visualisasi dari data fitur yang digunakan :
+- open,
+  ![image](https://user-images.githubusercontent.com/68459186/138907632-773f173c-88be-4403-a471-71cf90223ca2.png)
+
+- high,
+  ![image](https://user-images.githubusercontent.com/68459186/138907675-d7e6b0de-6f7f-45e1-97f7-96b9ac3b45ac.png)
+
+- low,
+  ![image](https://user-images.githubusercontent.com/68459186/138907719-34d2056c-d90f-42af-a2c1-ce7cc44eaad7.png)
+ 
+- close, 
+  ![image](https://user-images.githubusercontent.com/68459186/138907809-a54c85ea-2e1f-4883-a758-aa59506a881a.png)
+
+- adj close,
+  ![image](https://user-images.githubusercontent.com/68459186/138907842-af659089-fe8b-4d1c-a891-d8fd757bc658.png)
+ 
+- adj close_returns,
+  ![image](https://user-images.githubusercontent.com/68459186/138907883-d0914879-3bce-49a1-941a-145987d09aaf.png)
+ 
+- rsi_adj close, 
+  ![image](https://user-images.githubusercontent.com/68459186/138907915-8377cbd6-47ea-431e-86f9-112bc3ebe65a.png)
+
+- upper_band_adj close, 
+  ![image](https://user-images.githubusercontent.com/68459186/138907942-f314551b-9f15-4fb1-b024-51b9cd6fcc36.png)
+
+- lower_band_adj close,
+  ![image](https://user-images.githubusercontent.com/68459186/138907967-e0e196cc-d27e-4c48-8641-6ba609a8fdef.png)
+ 
+- dif_adj close, dan 
+  ![image](https://user-images.githubusercontent.com/68459186/138907987-d283a18c-c504-47dc-9e28-19ed31dfec1a.png)
+
+- macd_adj close.
+  ![image](https://user-images.githubusercontent.com/68459186/138908018-d391b3aa-40f4-4295-ab6c-b8bed0b4f28b.png)
 
 ## Data Preparation
 - menerapkan minimal satu (baiknya 2 atau lebih) teknik preparation, menjelaskan mengapa diperlukan tahapan tersebut, 
@@ -105,3 +145,7 @@ Kemudian dilakukan perhitungan pada data variabel target antara lain :
 - menyebutkan metrik evaluasi yang digunakan, menjelaskan hasil royek berdasarkan metrik, menyajikan model terbaik sebagai solusi
 
 ## Referensi
+- Fernando, Jason. (2021). _Moving Average Convergence Divergence (MACD)_. Diakses pada 26 Oktober 2021, dari https://www.investopedia.com/terms/m/macd.asp
+-  Fernando, Jason. (2021). _Relative Strength Index (RSI)_. Diakses pada 26 Oktober 2021, dari https://www.investopedia.com/terms/r/rsi.asp
+-  Hayes, Adam. (2021). _Simple Moving Average (SMA)_. Diakses pada 26 Oktober 2021, dari https://www.investopedia.com/terms/s/sma.asp
+- 
