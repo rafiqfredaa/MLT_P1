@@ -108,44 +108,43 @@ Berikut ini merupakan visualisasi dari data fitur yang digunakan :
 
 - high,
 
-  ![image](https://user-images.githubusercontent.com/68459186/138907675-d7e6b0de-6f7f-45e1-97f7-96b9ac3b45ac.png)
+  ![image](https://user-images.githubusercontent.com/68459186/138909692-d4b5b164-bb33-4bfe-8913-f91098087d49.png)
 
 - low,
   
-  ![image](https://user-images.githubusercontent.com/68459186/138907719-34d2056c-d90f-42af-a2c1-ce7cc44eaad7.png)
+  ![image](https://user-images.githubusercontent.com/68459186/138909743-38b3213d-64de-430d-bf03-422ad2203469.png)
  
 - close, 
   
-  ![image](https://user-images.githubusercontent.com/68459186/138907809-a54c85ea-2e1f-4883-a758-aa59506a881a.png)
+  ![image](https://user-images.githubusercontent.com/68459186/138909825-10187dcf-41ae-441a-9788-aa8e770ab756.png)
 
 - adj close,
   
-  ![image](https://user-images.githubusercontent.com/68459186/138907842-af659089-fe8b-4d1c-a891-d8fd757bc658.png)
+  ![image](https://user-images.githubusercontent.com/68459186/138909863-d5c03339-2f50-455a-a004-2ca83e36bd55.png)
  
 - adj close_returns,
   
-  ![image](https://user-images.githubusercontent.com/68459186/138907883-d0914879-3bce-49a1-941a-145987d09aaf.png)
+  ![image](https://user-images.githubusercontent.com/68459186/138909893-7667571c-4cfd-44e4-b498-ace379546a0b.png)
  
 - rsi_adj close, 
   
-  ![image](https://user-images.githubusercontent.com/68459186/138907915-8377cbd6-47ea-431e-86f9-112bc3ebe65a.png)
+  ![image](https://user-images.githubusercontent.com/68459186/138909956-0e378d72-54f7-41eb-a9e4-2f4190869321.png)
 
 - upper_band_adj close, 
   
-  ![image](https://user-images.githubusercontent.com/68459186/138907942-f314551b-9f15-4fb1-b024-51b9cd6fcc36.png)
+  ![image](https://user-images.githubusercontent.com/68459186/138910004-9c9b1c2a-c3f4-4a97-9feb-97960756a659.png)
 
 - lower_band_adj close,
   
-  ![image](https://user-images.githubusercontent.com/68459186/138907967-e0e196cc-d27e-4c48-8641-6ba609a8fdef.png)
+  ![image](https://user-images.githubusercontent.com/68459186/138910050-a61d4011-81a6-4876-89bf-89de292268ed.png)
  
 - dif_adj close, dan 
  
-  ![image](https://user-images.githubusercontent.com/68459186/138907987-d283a18c-c504-47dc-9e28-19ed31dfec1a.png)
+  ![image](https://user-images.githubusercontent.com/68459186/138910082-0e059120-7d5f-4a15-9a00-3efaa1b7edf8.png)
 
 - macd_adj close.
 
-![image](https://user-images.githubusercontent.com/68459186/138908914-a5b878b8-d44d-4fe5-9016-8d634d351597.png)
-
+  ![image](https://user-images.githubusercontent.com/68459186/138908914-a5b878b8-d44d-4fe5-9016-8d634d351597.png)
 
 ## Data Preparation
 - menerapkan minimal satu (baiknya 2 atau lebih) teknik preparation, menjelaskan mengapa diperlukan tahapan tersebut, 
