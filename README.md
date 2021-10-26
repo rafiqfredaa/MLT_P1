@@ -104,7 +104,7 @@ Sehingga fitur yang digunakan bertambah dengan adanya hasil perhitungan yang dil
 Berikut ini merupakan visualisasi dari data fitur yang digunakan :
 - open,
 
-  ![image](https://user-images.githubusercontent.com/68459186/138907632-773f173c-88be-4403-a471-71cf90223ca2.png)
+  ![image](https://user-images.githubusercontent.com/68459186/138909541-8a92fc56-f127-4c09-a743-98472eae798f.png) 
 
 - high,
 
