@@ -103,36 +103,47 @@ Sehingga fitur yang digunakan bertambah dengan adanya hasil perhitungan yang dil
 
 Berikut ini merupakan visualisasi dari data fitur yang digunakan :
 - open,
+
   ![image](https://user-images.githubusercontent.com/68459186/138907632-773f173c-88be-4403-a471-71cf90223ca2.png)
 
 - high,
+
   ![image](https://user-images.githubusercontent.com/68459186/138907675-d7e6b0de-6f7f-45e1-97f7-96b9ac3b45ac.png)
 
 - low,
+  
   ![image](https://user-images.githubusercontent.com/68459186/138907719-34d2056c-d90f-42af-a2c1-ce7cc44eaad7.png)
  
 - close, 
+  
   ![image](https://user-images.githubusercontent.com/68459186/138907809-a54c85ea-2e1f-4883-a758-aa59506a881a.png)
 
 - adj close,
+  
   ![image](https://user-images.githubusercontent.com/68459186/138907842-af659089-fe8b-4d1c-a891-d8fd757bc658.png)
  
 - adj close_returns,
+  
   ![image](https://user-images.githubusercontent.com/68459186/138907883-d0914879-3bce-49a1-941a-145987d09aaf.png)
  
 - rsi_adj close, 
+  
   ![image](https://user-images.githubusercontent.com/68459186/138907915-8377cbd6-47ea-431e-86f9-112bc3ebe65a.png)
 
 - upper_band_adj close, 
+  
   ![image](https://user-images.githubusercontent.com/68459186/138907942-f314551b-9f15-4fb1-b024-51b9cd6fcc36.png)
 
 - lower_band_adj close,
+  
   ![image](https://user-images.githubusercontent.com/68459186/138907967-e0e196cc-d27e-4c48-8641-6ba609a8fdef.png)
  
 - dif_adj close, dan 
+ 
   ![image](https://user-images.githubusercontent.com/68459186/138907987-d283a18c-c504-47dc-9e28-19ed31dfec1a.png)
 
 - macd_adj close.
+  
   ![image](https://user-images.githubusercontent.com/68459186/138908018-d391b3aa-40f4-4295-ab6c-b8bed0b4f28b.png)
 
 ## Data Preparation
