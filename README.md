@@ -143,8 +143,9 @@ Berikut ini merupakan visualisasi dari data fitur yang digunakan :
   ![image](https://user-images.githubusercontent.com/68459186/138907987-d283a18c-c504-47dc-9e28-19ed31dfec1a.png)
 
 - macd_adj close.
-  
-  ![image](https://user-images.githubusercontent.com/68459186/138908018-d391b3aa-40f4-4295-ab6c-b8bed0b4f28b.png)
+
+![image](https://user-images.githubusercontent.com/68459186/138908914-a5b878b8-d44d-4fe5-9016-8d634d351597.png)
+
 
 ## Data Preparation
 - menerapkan minimal satu (baiknya 2 atau lebih) teknik preparation, menjelaskan mengapa diperlukan tahapan tersebut, 
