@@ -158,25 +158,38 @@ Teknik preparation yang digunakan pada proyek ini antara lain :
 - Train-Test-Split 
   Dilakukan pembagian dataset menjadi 3 bagian, yaitu data latih, data validasi, dan data uji. Pertama, dilakukan pengambilan data untuk validasi sebanyak 89 data terakhir pada setiap variabel. Kemudian sisanya dibagi menjadi data latih dan data uji dengan perbandingan 80:20. Data latih digunakan untuk proses pelatihan model dengan data sebanyak 80% dari dataset yang sudah dikurangi, sedangkan data uji digunakan untuk menguji model yang sudah dilatih, serta data validasi digunakan untuk mengecek akurasi dari model yang sudah dilatih sebelum digunakan pada data uji. Pembagian dataset dilakukan menggunakan fungsi train_test_split dari sklearn. 
 
-
 ## Modeling
-- membuat model dan menjelaskan proses pemodelan
 
 Pada pemodelan menggunakan beberapa algoritma sebagai berikut :
-- Decision Tree Regression, 
-- Support Vector Regressor
+- Decision Tree Regression, salah satu metode klasifikasi populer, karena mudah diinterpretasi oleh manusia. Decision tree adalah model prediksi menggunakan struktur pohon atau struktur berhirarki. Konsepnya adalah mengubah data menjadi aturan-aturan keputusan. Manfaat untuk mem-break down proses pengambilan keputusan yang kompleks menjadi lebih simpel, sehingga pengambilan keputusan akan lebih menginterpretasikan solusi dari permasalahan. Selain itu, decision tree juga berguna untuk mengekplorasi data, menemukan hubungan tersembunyi antara sejumlah calon variabel input dengan sebuah variabel target. Kelebihan, mampu mengeliminasi perhitungan atau data-data yang sekiranya tidak diperlukan.  
+- Support Vector Regressor, Support Vector Machine juga dapat digunakan sebagai metode regresi, mempertahankan semua fitur utama yang menjadi ciri algoritma (margin maksimal). Support Vector Regression (SVR) menggunakan prinsip yang sama dengan SVM untuk klasifikasi, dengan hanya beberapa perbedaan kecil. Pertama-tama, karena keluaran adalah bilangan real, menjadi sangat sulit untuk memprediksi informasi yang ada, yang memiliki kemungkinan tak terbatas. Dalam kasus regresi, margin toleransi (epsilon) diatur dalam perkiraan ke SVM yang akan sudah diminta dari masalah. Tapi selain fakta ini, ada juga alasan yang lebih rumit, algoritmanya lebih rumit sehingga harus dipertimbangkan. Namun, ide utamanya selalu sama: untuk meminimalkan kesalahan, individualisasi hyperplane yang memaksimalkan margin, dengan mengingat bahwa bagian dari kesalahan ditoleransi.
 - Random Forest, salah satu algoritma supervised learning yang digunakan untuk menyelesaikan masalah klasifikasi dan regresi. Random forest termasuk ke dalam kelompok model ensemble (model prediksi yang terdiri dari beberapa model dan bekerja secara bersama-sama). Sehingga, tingkat keberhasilan akan lebih tinggi dibandingkan model yang bekerja sendirian. Random forest pada dasarnya adalah versi bagging dari algoritma decision tree. Algoritma ini disebut sebagai random forest karena disusun dari banyak algoritma pohon (decision tree) yang pembagian data dan fiturnya dipilih secara acak. 
   ![image](https://user-images.githubusercontent.com/68459186/139058578-936b1b4d-2c83-406d-8cd1-397b871fd6cc.png)
  
 - LassoCV dan RidgeCV, Pada regresi ridge ada 3 konsep, yaitu regularization, L1 Loss function atau L1 Regularization, dan L2 Loss function atau L2 Regularization. Regularization digunakan untuk menyelesaikan masalah performa model yang tidak sinkron. Maksudnya, suatu model memiliki performa yang baik untuk data latih tetapi memiliki performa yang buruk untuk data uji. regularization menyelesaikan masalah ini dengan menambahkan penalti ke fungsi tujuan dan mengontrol kompleksitas model dengan penalti tersebut. Regularization biasanya digunakan untuk situasi variabel berjumlah besar, rasio jumlah observasi dan jumlah variabel kecil, dan adanya multikolinieritas. Maksud dari istilah L1 Loss function atau L1 Regularization adalah meminimalkan fungsi tujuan dengan menambahkan penalti ke jumlah nilai absolut koefisien atau biasa dikenal dengan metode deviasi absolut terkecil sedangkan maksud dari L2 Loss function atau L2 Regularization adalah meminimalkan fungsi tujuan dengan menambahkan penalti ke jumlah kuadrat koefisien.
   Kata Lasso pada regresi lasso merupakan singkatan dari Least Absolute Shrinkage and Selection Operator. Metode ini menggunakan teknik L1 Regularization dalam fungsi tujuan. Keuntungan regresi lasso dibandingkan regresi ridge adalah regresi lasso dapat memilih variabel bawaan serta penyusutan parameter. Persamaan regresi ridge dan laso adalah sama-sama digunakan untuk menangani multikolinieritas. Regresi ridge secara komputasi lebih efisien jika dibandingkan regresi lasso. 
-- Gradient Boosting Regressor, Teknik pembelajaran mesin untuk regresi, klasifikasi, dan tugas lainnya, yang menghasilkan model prediksi dalam bentuk kumpulan model prediksi yang lemah, biasanya pohon keputusan (decision tree. ) 
-- Stochastic Gradient Descent
+- Gradient Boosting Regressor, Termasuk dalam algoritma ensemble yang menggunakan pningkatan akurasi prediktor. Gradient boost membangun tree dengan 8 sampai 32 daun, menggunakan boosting untuk proses pengoptimalan dengan menggunakan loss function untuk meminimalisir kesalahan, dan cara kerja algoritma gradient boost adalah membangun satu tree untuk menyesuaikan data, lalu tree berikutnya dibangun untuk mengurangi residual (error).
+- Stochastic Gradient Descent, Pendekatan sederhana namun sangat efisien untuk menyesuaikan pengklasifikasi linier dan regressor di bawah kerugian cembung seperti (linier) Support Vector Machines dan Logistic Regression. kelebihan, efisien dan kemudahan implementasi. kekurangan, SGD membutuhkan sejumlah hyperparameter seperti parameter regularisasi dan jumlah iterasi dan sensitif terhadap penskalaan fitur.  
 
 ## Evaluation
-- menyebutkan metrik evaluasi yang digunakan, menjelaskan hasil royek berdasarkan metrik, menyajikan model terbaik sebagai solusi
+
+Matrik evalusi yang digunakan :
+- RMSE, Metrik kesalahan akar rata-rata kuadrat adalah ukuran yang sering digunakan untuk perbedaan antara nilai yang diprediksi oleh model atau penaksir dan nilai yang diamati. Metrik ini berkisaran dari nol hingga tak terhingga; nilai yang lebih rendah menunjukkan kualitas model yang lebih tinggi.
+- R2 Score, Kuadrat dari koefisien korelasi Pearson antara label dan nilai prediksi. Metrik ini berkisaran antara nol dan satu; nilai yang lebih tinggi menunjukkan kualitas model yang lebih tinggi. 
+
+Berikut ini merupakan hasil dari proses pemodelan yang telah dilakukan menggunakan beberapa algoritma, model dilatih menggunakan data latih dan dicoba memprediksi pada data validasi yang dapat dilihat pada gambar visualisasi berikut ini.
   
   ![image](https://user-images.githubusercontent.com/68459186/139044524-76a204b6-f169-4a03-a9d3-f67edfe6a153.png)
+
+Berikut ini grafik yang digunakan untuk membandingkan nilai RMSE dari setiap model yang telah dibuat.
+
+![image](https://user-images.githubusercontent.com/68459186/139089280-5cf54886-3f46-4b24-87f4-eb132104fea9.png)
+
+Dari data diatas sehingga dibuat sebuah tabel untuk mengurutkan algoritma dengan performa tinggi ke rendah, sebagai berikut ini. 
+
+![image](https://user-images.githubusercontent.com/68459186/139089080-cd43ad37-46cc-49d7-8f36-8a5efbb84fc7.png)
+
+Dari hasil yang didapatkan dari pembuatan beberapa model diatas maka didapatkan nilai RMSE dan R2 Score seperti diatas. Sehingga dapat digunakan model dengan nilai RMSE terendah dan R2 Score yang tinggi yang memiliki performa yang baik untuk digunakan sebagai model prediksi harga emas. Model yang mungkin cocok untuk digunakan adalah LassoCV, SVR yang diberikan Hyperparameter Tunning, dan RidgeCV. 
 
 
 ## Referensi
@@ -185,4 +198,12 @@ Pada pemodelan menggunakan beberapa algoritma sebagai berikut :
 -  Hayes, Adam. (2021). _Simple Moving Average (SMA)_. Diakses pada 26 Oktober 2021, dari https://www.investopedia.com/terms/s/sma.asp
 - Hayes, Adam. (2021). _Bollinger Band Definition_. Diakses pada 26 Oktober 2021, dari https://www.investopedia.com/terms/b/bollingerbands.asp
 - Anonim. (2021). _Jenis-Jenis Metode Regresi dalam Algoritma Supervised Learning_. Diakses pada 27 Oktober 2021, dari https://www.dqlab.id/jenis-metode-regresi-algoritma-supervised-learning
-- 
+- IYKRA. (2018). _Mengenal Decision Tree dan Manfaatnya_. Diakses pada 27 Oktober 2021, dari https://medium.com/iykra/mengenal-decision-tree-dan-manfaatnya-b98cf3cf6a8d
+- Anonim. (). _Support Vector Machine-Regression (SVR)_. Diakses pada 27 Oktober 2021, dari https://www.saedsayad.com/support_vector_machine_reg.htm
+- Anonim. (). _1.5. Stochastic Gradient Descent_. Diakses pada 27 Oktober 2021, dari https://scikit-learn.org/stable/modules/sgd.html
+- Anonim. (2021). _Algoritma Machine Learning yang Harus Kamu Pelajari di Tahun 2021_. Diakses pada 27 Oktober 2021, dari https://www.dqlab.id/algoritma-machine-learning-yang-perlu-dipelajari
+- Anonim. (2021). _AutoML Tables Documentation : Guide_. Diakses pada 27 Oktober 2021, dari https://cloud.google.com/automl-tables/docs/evaluate?hl=en
+- Majumder, Sohom. (2021). _Gold price prediction-Time Series split & LGBM_. Diakses pada 18 Oktober 2021, dari https://www.kaggle.com/sohommajumder21/gold-price-prediction-time-series-split-lgbm
+- Siddhartha, Manu. (2021). _Gold Price Prediction Using Machine Learning_. Diakses pada 17 Oktober 2021, dari https://www.kaggle.com/sid321axn/gold-price-prediction-using-machine-learning
+- Dranitsyna, Ekaterina. (2021). _gold_price_model_. Diakses pada 18 Oktober 2021, dari https://www.kaggle.com/ekaterinadranitsyna/gold-price-model
+-  Venable, Hayden. (2021). _GOld Price Predicion with PCA and Regression_. Diakses pada 17 Oktober 2021, dari https://www.kaggle.com/haydenvenable/gold-price-prediction-with-pca-and-regression
