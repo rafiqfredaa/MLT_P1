@@ -17,7 +17,7 @@ Tantangan pada proyek ini adalah untuk secara akurat memprediksi haarga penutupa
 
 ## Business Understanding
 
-### Problem (pernyataan masalah)
+### Problem
 
 Dari latar belakang masalah di atas, berikut merupakan rumusan masalah yang didapatkan :
 - Dari banyaknya fitur yang ada fitur manakah yang memiliki hubungan atau pengaruh terhadap data harga penjualan emas?
