@@ -15,10 +15,7 @@ Tantangan pada proyek ini adalah untuk secara akurat memprediksi haarga penutupa
   <img width="460" height="300" src="https://user-images.githubusercontent.com/68459186/138650396-7b5242eb-4287-4b70-af33-ab6465db02e1.png">
 </p>
 
-- Uraian singkat informasi mengenai domain, jelaskan mengapa dan bagaimana masalah harus diselesaikan, menyertakan hasil riset terkait
-
 ## Business Understanding
-- menjelaskan proses klarifikasi masalah dan manjagujakan minimal satu solusi untuk menyelesaikan permasalahan
 
 ### Problem (pernyataan masalah)
 
@@ -27,20 +24,20 @@ Dari latar belakang masalah di atas, berikut merupakan rumusan masalah yang dida
 - Bagaimana cara pemrosesan data yang dapat dilakukan pada data harga penjualan emas?
 - Bagaimana cara membuat model machine learning yang cocok untuk data harga penjualan emas?
 
-### Goals (tujuan)
+### Goals
 Berikut ini adalah tujuan yang akan dicapai :
 - Memilih fitur-fitur yang memiliki hubungan atau pengaruh terhadap data harga penjualan emas
 - Melakukan pemrosesan terhadap data harga penjualan eams
 - Membuat model machine learning terbaik untuk memprediksi harga penjualan emas 
 
-### Solution Statements (pernyataan solusi-dua atau lebih)
+### Solution Statements
 Berikut ini adalah solusi yang mungkin dapat dilakukan :
 - Melihat persebaran data pada data penjualan emas dan memilih variabel utama yang berhubungan langsung dengan harga penjualan emas.
 - Pemrosesan terhadap data penjualan emas yang dapat dilakukan antara lain, melihat apakah ada data yang hilang/kosong, memvisualisasikan data, melakukan beberapa perhitungan (MACD, RSI, SMA, dan Bollinger Bands), normalisasi, encoding fitur dan membagi data menjadi data latih dan data uji. 
 - Membuat beberapa algoritma model seperti Decision Tree, Support Vector Regressor, Random Forest dan sebagainya, serta menerapkan hyperparamater tuning pada beberap model.
 
 ## Data Understanding
-- memberikan informasi mengenai data yang digunakan dan sumber data, menguraikan seluruh variabel atau fitur pada data, visualisasi data
+
 ![image](https://user-images.githubusercontent.com/68459186/138727998-25fa3504-e84f-473c-af31-68eeb6de0a34.png)
 
 Informasi dataset :
@@ -148,15 +145,44 @@ Berikut ini merupakan visualisasi dari data fitur yang digunakan :
 
 ## Data Preparation
 - menerapkan minimal satu (baiknya 2 atau lebih) teknik preparation, menjelaskan mengapa diperlukan tahapan tersebut, 
+Teknik preparation yang digunakan pada proyek ini antara lain :
+- Menghilangkan data yang bernilai 0 atau kosong
+  
+  ![image](https://user-images.githubusercontent.com/68459186/139034942-5b1ea3b5-439d-4e8a-a4a3-889ef4df4488.png)
+  
+  Bisa dilihat pada gambar diatas menunjukan jumlah nilai yang kosong atau NaN yang terdapat pada data dikarenakan jumlahnya tidak terlalu banyak sehingga diputuskan untuk menghapusnya. Selain itu, karena jumlah yang tidak terlalu banyak sehingga tidak terlalu mempengaruhi fitur atau hilangnya informasi yang dibutuhkan. 
+  
+- Normalisasi
+  Normalisasi dilakukan dengan tujuan untuk mengubah nilai kolom numerik dalam data ke skala yang sama, tanpa menggangu perbedaan dalam rentang nilai. Normalisasi dilakukan pada fitur-fitur yang akan digunakan. Proses normalisasi dilakukan menggunakan fungsi MinMaxScaler dari sklearn.
+
+- Train-Test-Split 
+  Dilakukan pembagian dataset menjadi 3 bagian, yaitu data latih, data validasi, dan data uji. Pertama, dilakukan pengambilan data untuk validasi sebanyak 89 data terakhir pada setiap variabel. Kemudian sisanya dibagi menjadi data latih dan data uji dengan perbandingan 80:20. Data latih digunakan untuk proses pelatihan model dengan data sebanyak 80% dari dataset yang sudah dikurangi, sedangkan data uji digunakan untuk menguji model yang sudah dilatih, serta data validasi digunakan untuk mengecek akurasi dari model yang sudah dilatih sebelum digunakan pada data uji. Pembagian dataset dilakukan menggunakan fungsi train_test_split dari sklearn. 
+
 
 ## Modeling
 - membuat model dan menjelaskan proses pemodelan
 
+Pada pemodelan menggunakan beberapa algoritma sebagai berikut :
+- Decision Tree Regression, 
+- Support Vector Regressor
+- Random Forest, salah satu algoritma supervised learning yang digunakan untuk menyelesaikan masalah klasifikasi dan regresi. Random forest termasuk ke dalam kelompok model ensemble (model prediksi yang terdiri dari beberapa model dan bekerja secara bersama-sama). Sehingga, tingkat keberhasilan akan lebih tinggi dibandingkan model yang bekerja sendirian. Random forest pada dasarnya adalah versi bagging dari algoritma decision tree. Algoritma ini disebut sebagai random forest karena disusun dari banyak algoritma pohon (decision tree) yang pembagian data dan fiturnya dipilih secara acak. 
+  ![image](https://user-images.githubusercontent.com/68459186/139058578-936b1b4d-2c83-406d-8cd1-397b871fd6cc.png)
+ 
+- LassoCV dan RidgeCV, Pada regresi ridge ada 3 konsep, yaitu regularization, L1 Loss function atau L1 Regularization, dan L2 Loss function atau L2 Regularization. Regularization digunakan untuk menyelesaikan masalah performa model yang tidak sinkron. Maksudnya, suatu model memiliki performa yang baik untuk data latih tetapi memiliki performa yang buruk untuk data uji. regularization menyelesaikan masalah ini dengan menambahkan penalti ke fungsi tujuan dan mengontrol kompleksitas model dengan penalti tersebut. Regularization biasanya digunakan untuk situasi variabel berjumlah besar, rasio jumlah observasi dan jumlah variabel kecil, dan adanya multikolinieritas. Maksud dari istilah L1 Loss function atau L1 Regularization adalah meminimalkan fungsi tujuan dengan menambahkan penalti ke jumlah nilai absolut koefisien atau biasa dikenal dengan metode deviasi absolut terkecil sedangkan maksud dari L2 Loss function atau L2 Regularization adalah meminimalkan fungsi tujuan dengan menambahkan penalti ke jumlah kuadrat koefisien.
+  Kata Lasso pada regresi lasso merupakan singkatan dari Least Absolute Shrinkage and Selection Operator. Metode ini menggunakan teknik L1 Regularization dalam fungsi tujuan. Keuntungan regresi lasso dibandingkan regresi ridge adalah regresi lasso dapat memilih variabel bawaan serta penyusutan parameter. Persamaan regresi ridge dan laso adalah sama-sama digunakan untuk menangani multikolinieritas. Regresi ridge secara komputasi lebih efisien jika dibandingkan regresi lasso. 
+- Gradient Boosting Regressor, Teknik pembelajaran mesin untuk regresi, klasifikasi, dan tugas lainnya, yang menghasilkan model prediksi dalam bentuk kumpulan model prediksi yang lemah, biasanya pohon keputusan (decision tree. ) 
+- Stochastic Gradient Descent
+
 ## Evaluation
 - menyebutkan metrik evaluasi yang digunakan, menjelaskan hasil royek berdasarkan metrik, menyajikan model terbaik sebagai solusi
+  
+  ![image](https://user-images.githubusercontent.com/68459186/139044524-76a204b6-f169-4a03-a9d3-f67edfe6a153.png)
+
 
 ## Referensi
 - Fernando, Jason. (2021). _Moving Average Convergence Divergence (MACD)_. Diakses pada 26 Oktober 2021, dari https://www.investopedia.com/terms/m/macd.asp
 -  Fernando, Jason. (2021). _Relative Strength Index (RSI)_. Diakses pada 26 Oktober 2021, dari https://www.investopedia.com/terms/r/rsi.asp
 -  Hayes, Adam. (2021). _Simple Moving Average (SMA)_. Diakses pada 26 Oktober 2021, dari https://www.investopedia.com/terms/s/sma.asp
+- Hayes, Adam. (2021). _Bollinger Band Definition_. Diakses pada 26 Oktober 2021, dari https://www.investopedia.com/terms/b/bollingerbands.asp
+- Anonim. (2021). _Jenis-Jenis Metode Regresi dalam Algoritma Supervised Learning_. Diakses pada 27 Oktober 2021, dari https://www.dqlab.id/jenis-metode-regresi-algoritma-supervised-learning
 - 
