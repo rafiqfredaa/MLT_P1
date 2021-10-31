@@ -1,7 +1,7 @@
 # Laporan Proyek Pertama Modul Machine Learning Terapan
 
 ## Domain Proyek
-Domain proyek yang dipilih untuk proyek pertama machine learning terapan adalah mengenai ekononi dengan membahas tentang harga emas yang dilakukan adalah memprediksi harga emas.
+Domain proyek yang dipilih untuk proyek pertama machine learning terapan adalah mengenai ekonomi dengan membahas tentang harga emas yang dilakukan adalah memprediksi harga emas.
 
 - Latar Belakang
 
@@ -9,7 +9,7 @@ Dalam catatan sejarah, emas telah digunakan sebagai mata uang di berbagai belaha
 
 Memprediksi kenaikan dan penurunan harga emas harian dapat membantu investor memutuskan kapan harus membeli atau menjual komoditas terseut. tetapi harga emas bergantung pada banyak faktor seperti harga logam mulia lainnya seperti harga minyak mentah, kinerja bursa saham, harga obligasi, nilai tukar mata uang, dan sebagainya. 
 
-Tantangan pada proyek ini adalah untuk secara akurat memprediksi haarga penutupan ETF emas yang disesuaikan di masa depan selama periode waktu tertentu di masa mendatang. Masalahnya adalah masalah regresi, karena nilai output yang merupakan harga penutupan yang disesuaikan dalam proyek ini adalah nilai kontinu.
+Tantangan pada proyek ini adalah untuk secara akurat memprediksi harga penutupan ETF emas yang disesuaikan di masa depan selama periode waktu tertentu di masa mendatang. Masalahnya adalah masalah regresi, karena nilai output yang merupakan harga penutupan yang disesuaikan dalam proyek ini adalah nilai kontinu.
 
 <p align="center">
   <img width="460" height="300" src="https://user-images.githubusercontent.com/68459186/138650396-7b5242eb-4287-4b70-af33-ab6465db02e1.png">
@@ -22,7 +22,7 @@ Tantangan pada proyek ini adalah untuk secara akurat memprediksi haarga penutupa
 Dari latar belakang masalah di atas, berikut merupakan rumusan masalah yang didapatkan :
 - Dari banyaknya fitur yang ada fitur manakah yang memiliki hubungan atau pengaruh terhadap data harga penjualan emas?
 - Bagaimana cara pemrosesan data yang dapat dilakukan pada data harga penjualan emas?
-- Bagaimana cara membuat model machine learning yang cocok untuk data harga penjualan emas?
+- Bagaimana membuat model machine learning yang mampu memprediksi harga penjualan emas secara akurat?
 
 ### Goals
 Berikut ini adalah tujuan yang akan dicapai :
@@ -34,7 +34,16 @@ Berikut ini adalah tujuan yang akan dicapai :
 Berikut ini adalah solusi yang mungkin dapat dilakukan :
 - Melihat persebaran data pada data penjualan emas dan memilih variabel utama yang berhubungan langsung dengan harga penjualan emas.
 - Pemrosesan terhadap data penjualan emas yang dapat dilakukan antara lain, melihat apakah ada data yang hilang/kosong, memvisualisasikan data, melakukan beberapa perhitungan (MACD, RSI, SMA, dan Bollinger Bands), normalisasi, encoding fitur dan membagi data menjadi data latih dan data uji. 
-- Membuat beberapa algoritma model seperti Decision Tree, Support Vector Regressor, Random Forest dan sebagainya, serta menerapkan hyperparamater tuning pada beberap model.
+- Membuat beberapa algoritma model seperti, 
+  - Decision Tree Regression,
+    - Kelebihan
+    - Kekurangan   
+  - Support Vector Regressor, 
+  - Random Forest
+  - LassoCV dan RidgeCV
+  - Gradient Boosting Regressor
+  - Stochastic Gradient Descent
+  serta menerapkan hyperparamater tuning pada beberap model.
 
 ## Data Understanding
 
