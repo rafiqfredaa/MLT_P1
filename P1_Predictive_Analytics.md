@@ -33,7 +33,7 @@ Berikut ini adalah tujuan yang akan dicapai :
 ### Solution Statements
 Berikut ini adalah solusi yang mungkin dapat dilakukan :
 - Melihat persebaran data pada data penjualan emas dan memilih variabel utama yang berhubungan langsung dengan harga penjualan emas.
-- Pemrosesan terhadap data penjualan emas yang dapat dilakukan antara lain, melihat apakah ada data yang hilang/kosong, memvisualisasikan data, melakukan beberapa perhitungan (MACD, RSI, SMA, dan Bollinger Bands), normalisasi, encoding fitur dan membagi data menjadi data latih dan data uji. 
+- Pemrosesan terhadap data penjualan emas yang dapat dilakukan antara lain, melihat apakah ada data yang hilang/kosong, memvisualisasikan data, melakukan beberapa perhitungan (MACD, RSI, SMA, dan Bollinger Bands), normalisasi, encoding fitur dan membagi data menjadi data latih, data validasi dan data uji. 
 - Membuat beberapa algoritma model seperti, 
   - Decision Tree Regression,
     - Kelebihan
