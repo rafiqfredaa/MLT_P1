@@ -60,24 +60,106 @@ Informasi dataset :
 | Jenis dan Ukuran Berkas | CSV (1.04 MB)                                                                           |
 
 Atribut pada dataset :
-- Fitur
-  - Gold ETF :- Date, Open, High, Low, Close and Volume.
-  - S&P 500 Index :- 'SP_open', 'SP_high', 'SP_low', 'SP_close', 'SP_Ajclose', 'SP_volume'
-  - Dow Jones Index :- 'DJ_open','DJ_high', 'DJ_low', 'DJ_close', 'DJ_Ajclose', 'DJ_volume'
-  - Eldorado Gold Corporation (EGO) :- 'EG_open', 'EG_high', 'EG_low', 'EG_close', 'EG_Ajclose', 'EG_volume'
-  - EURO - USD Exchange Rate :- 'EU_Price','EU_open', 'EU_high', 'EU_low', 'EU_Trend'
-  - Brent Crude Oil Futures :- 'OF_Price', 'OF_Open', 'OF_High', 'OF_Low', 'OF_Volume', 'OF_Trend'
-  - Crude Oil WTI USD :- 'OS_Price', 'OS_Open', 'OS_High', 'OS_Low', 'OS_Trend'
-  - Silver Futures :- 'SF_Price', 'SF_Open', 'SF_High', 'SF_Low', 'SF_Volume', 'SF_Trend'
-  - US Bond Rate (10 years) :- 'USB_Price', 'USB_Open', 'USB_High','USB_Low', 'USB_Trend'
-  - Platinum Price :- 'PLT_Price', 'PLT_Open', 'PLT_High', 'PLT_Low','PLT_Trend'
-  - Palladium Price :- 'PLD_Price', 'PLD_Open', 'PLD_High', 'PLD_Low','PLD_Trend'
-  - Rhodium Prices :- 'RHO_PRICE'
-  - US Dollar Index : 'USDI_Price', 'USDI_Open', 'USDI_High','USDI_Low', 'USDI_Volume', 'USDI_Trend'
-  - Gold Miners ETF :- 'GDX_Open', 'GDX_High', 'GDX_Low', 'GDX_Close', 'GDX_Adj Close', 'GDX_Volume'
-  - Oil ETF USO :- 'USO_Open','USO_High', 'USO_Low', 'USO_Close', 'USO_Adj Close', 'USO_Volume'
-- Variabel target
-  - Gold ETF :- Adjusted Close  
+
+- Gold ETF, komoditas yang diperdagangkan seperti saham. Meski terdiri dari aset berupa emas, investor sebenarnya tidak memiliki komoditas fisiknya. Investasi emas ETF dikenakan biaya tambahan baik biaya broker dan penebusan ETF.
+  - Open, harga pembukaan
+  - High, harga tertinggi
+  - Low,  harga terendah
+  - Close, harga penutupan
+  - Adj Close, harga penutupan yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split.
+  - Volume, menunjukkan jumlah perdagangan atau transaksi yang terjadi dalam perdagangan di suatu sesi.
+- S&P 500 Index, indeks yang terdiri atas 500 saham dengan market capitalization terbesar di Amerika Serikat. Indeks ini dimiliki oleh Standard & Poor. Indeks saham S&P500 meliputi 80% dari kapitalisasi pasar di USA.
+  - SP_open, harga pembukaan S&P 500 Index
+  - SP_high, harga tertinggi S&P 500 Index
+  - SP_low, harga terendah S&P 500 Index
+  - SP_close, harga penutupan S&P 500 Index
+  - SP_Ajclose, harga penutupan S&P 500 Index yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split.
+  - SP_volume, menunjukkan jumlah perdagangan atau transaksi S&P 500 Index yang terjadi dalam perdagangan di suatu sesi.
+- Dow Jones Index, indeks pasar saham yang didirikan oleh editor The Wall Street Jurnal dan pendiri Dow Jones & Company Charles Cow. Bursa saham ini terdiri dari 30 perusahaan terbesar di Amerika Serikat.
+  - DJ_open, harga pembukaan Dow Jones Index
+  - DJ_high, harga tertinggi Dow Jones Index
+  - DJ_low, harga terendah Dow Jones Index
+  - DJ_close, harga penutupan Dow Jones Index
+  - DJ_Ajclose, harga penutupan Dow Jones Index yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split.
+  - DJ_volume, menunjukkan jumlah perdagangan atau transaksi Dow Jones Index yang terjadi dalam perdagangan di suatu sesi.
+- Eldorado Gold Corporation, perusahaan Kanada yang memiliki dan mengoperasikan tambang emas di Turki, Yunani, dan Kanada.
+  - EG_open, harga pembukaan Eldorado Gold Corporation
+  - EG_high, harga tertinggi Eldorado Gold Corporation
+  - EG_low, harga terendah Eldorado Gold Corporation
+  - EG_close, harga penutupan Eldorado Gold Corporation
+  - EG_Ajclose, harga penutupan Eldorado Gold Corporation yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split.
+  - EG_volume, menunjukkan jumlah perdagangan atau transaksi Eldorado Gold Corporation yang terjadi dalam perdagangan di suatu sesi.
+- EURO - USD Exchange Rate, Nilai tukar satuan mata uang Euro terhadap USD. 
+  - EU_Price, harga jual
+  - EU_open, harga pembukaan EURO - USD Exchange Rate
+  - EU_high, harga tertinggi EURO - USD Exchange Rate
+  - EU_low, harga terendah EURO - USD Exchange Rate
+  - EU_Trend, rekam jejak harga EURO - USD Exchange Rate
+- Brent Crude Oil Futures, harga patokan utama untuk pembelian minyak di seluruh dunia. Sementara minyak Brent Crude bersumber dari Laut Utara, produksi minyak yang berasal dari Eropa, Afrika dan Timur Tengah yang mengalir ke Barat cenderung dihargai relatif terhadap minyak ini.
+  - OF_Price, harga jual Brent Crude Oil Futures
+  - OF_Open, harga pembukaan Brent Crude Oil Futures
+  - OF_High, harga tertinggi Brent Crude Oil Futures
+  - OF_Low, harga terendah Brent Crude Oil Futures
+  - OF_Volume, menunjukkan jumlah perdagangan atau transaksi Brent Crude Oil Futures yang terjadi dalam perdagangan di suatu sesi.
+  - OF_Trend, rekam jejak harga Brent Crude Oil Futures
+- Crude Oil WTI USD, West Texas Intermediate - Patokan WTI untuk minyak mentah AS adalah komoditas dunia yang paling aktif diperdagangkan.
+  - OS_Price, harga jual Crude Oil WTI USD
+  - OS_Open, harga pembukaan Crude Oil WTI USD
+  - OS_High, harga tertinggi Crude Oil WTI USD
+  - OS_Low, harga terendah Crude Oil WTI USD
+  - OS_Trend, rekam jejak harga Crude Oil WTI USD
+- Silver Futures, perdagangan perak berjangka
+  - SF_Price, harga jual Silver Futures
+  - SF_Open, harga pembukaan Silver Futures
+  - SF_High, harga tertinggi Silver Futures
+  - SF_Low, harga terendah Silver Futures
+  - SF_Volume, menunjukkan jumlah perdagangan atau transaksi Silver Futures yang terjadi dalam perdagangan di suatu sesi.
+  - SF_Trend, rekam jejak harga Silver Futures
+- US Bond Rate (10 years), surat berharga berupa pengakuan utang negara Amerika Serikat yang dijamin pembayaran bunga dan pokoknya oleh negara. Di Amerika Serikat, berlaku surat utang negara 10 tahun. 
+  - USB_Price, harga jual US Bond Rate
+  - USB_Open, harga pembukaan US Bond Rate
+  - USB_High, harga tertinggi US Bond Rate
+  - USB_Low, harga terendah US Bond Rate
+  - USB_Trend, rekam jejak harga US Bond Rate
+- Platinum Price, perdagangan harga platinum
+  - PLT_Price, harga jual Platinum
+  - PLT_Open, harga pembukaan Platinum
+  - PLT_High, harga tertinggi Platinum
+  - PLT_Low, harga terendah Platinum
+  - PLT_Trend, rekam jejak harga Platinum
+- Palladium Price, perdagangan harga palladium
+  - PLD_Price, harga jual Palladium
+  - PLD_Open, harga pembukaan Palladium
+  - PLD_High, harga tertinggi Palladium
+  - PLD_Low, harga terendah Palladium
+  - PLD_Trend, rekam jejak harga Palladium
+- Rhodium Price, perdagangan harga rhodium
+  - RHO_PRICE, harga jual Rhodium
+- US Dollar Index, indeks atau ukuran nilai dolar Amerika Serikat relatif terhadap mata uang asing. Indeks ini dirancang, dipelihara dan diterbitkan oleh ICE (International Exchange, Inc).
+  - USDI_Price, harga jual US Dollar Index
+  - USDI_Open, harga pembukaan US Dollar Index
+  - USDI_High, harga tertinggi US Dollar Index
+  - USDI_Low, harga terendah US Dollar Index
+  - USDI_Volume, menunjukkan jumlah perdagangan atau transaksi US Dollar Index yang terjadi dalam perdagangan di suatu sesi.
+  - USDI_Trend, rekam jejak harga US Dollar Index
+- Gold Miners ETF, produk investasi yang diperdagangkan di bursa yang berusaha memberikan hasil investasi yang sesuai dengan pergerakan harga saham perusahaan yang secara aktif terlibat dalam penambangan dan aspek lain dari produksi emas.
+  - GDX_Open, harga pembukaan Gold Miners ETF
+  - GDX_High, harga tertinggi Gold Miners ETF
+  - GDX_Low, harga terendah Gold Miners ETF
+  - GDX_Close, harga penutupan Gold Miners ETF
+  - GDX_Adj Close, harga penutupan Gold Miners ETF yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split.
+  - GDX_Volume, menunjukkan jumlah perdagangan atau transaksi Gold Miners ETF yang terjadi dalam perdagangan di suatu sesi.
+- Oil ETF USO, produk yang diperdagangkan di bursa yang berusaha memberikan hasil investasi yang sesuai dengan pergerakan harga harian minyak mentah ringan dan manis WTI. 
+  - USO_Open, harga pembukaan Oil ETF USO
+  - USO_High, harga tertinggi Oil ETF USO
+  - USO_Low, harga terendah Oil ETF USO
+  - USO_Close, harga penutupan Oil ETF USO
+  - USO_Adj Close, harga penutupan Oil ETF USO yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split. 
+  - USO_Volume, menunjukkan jumlah perdagangan atau transaksi Oil ETF USO yang terjadi dalam perdagangan di suatu sesi.
+
+Keterangan:
+- ETF, Reksa Dana berbentuk Kontrak Investasi Kolektif yang unit penyertaannya diperdagangkan di Bursa Efek. Meskipun ETF pada dasarnya adalah reksa dana, produk ini diperdagangkan seperti saham-saham yang ada di bursa efek. ETF merupakan penggabungan antara unsur reksa dana dalam hal pengelolaan dana dengan mekanisme saham dalam hal transaksi jual maupun beli.
+- Trend, rangkaian rekam jejak harga dalam bentuk grafik dengan kecondongan untuk mengarah ke atas (1) atau ke bawah (0)
 
 Atribut pada dataset yang dipilih untuk digunakan untuk mengembangkan model :
 - Fitur
