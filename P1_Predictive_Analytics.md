@@ -35,9 +35,9 @@ Berikut ini adalah solusi yang mungkin dapat dilakukan :
 - Melihat persebaran data pada data penjualan emas dan memilih variabel utama yang berhubungan langsung dengan harga penjualan emas.
 - Pemrosesan terhadap data penjualan emas yang dapat dilakukan antara lain, melihat apakah ada data yang hilang/kosong, memvisualisasikan data, melakukan beberapa perhitungan (MACD, RSI, SMA, dan Bollinger Bands), normalisasi, encoding fitur dan membagi data menjadi data latih, data validasi dan data uji. 
 - Membuat beberapa algoritma model seperti, 
-  - Decision Tree Regression,
-    - Kelebihan
-    - Kekurangan   
+  - Decision Tree Regression, metode pembelajaran terawasi non-parametrik yang digunakan untuk klasifikasi dan regresi. Tujuannya adalah untuk membuat model yang memprediksi nilai variabel target dengan mempelajari aturan keputusan sederhana yang disipulkan dari fitur data. Sebuah pohon dapat dilihat sebagai pendekatan konstan sepotong demi sepotong. 
+    - Kelebihan, mudah disiapkan, lebih sedikit pembersihan data yang diperlukan dan mudah dibaca dan diafsirkan   
+    - Kekurangan, overfitting ketika kelas dan kriteria yang digunakan sangat banyak dan kurang efektif dalam memprediksi hasil dari variabel kontinu karena pohon keputusan cenderung kehilangan informasi saat mengkategorikan variabel ke dalam beberapa kategori.    
   - Support Vector Regressor, 
   - Random Forest
   - LassoCV dan RidgeCV
