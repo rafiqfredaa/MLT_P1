@@ -5,9 +5,9 @@ Domain proyek yang dipilih untuk proyek pertama machine learning terapan adalah 
 
 - Latar Belakang
 
-Dalam catatan sejarah, emas telah digunakan sebagai mata uang di berbagai belahan dunia. Saat ini, logam mulia seperti emas dipegang oleh bank sentral di semua negara untuk menjamin pembayaran kembali utang luar negeri, dan juga untuk mengendalikan inflasi yaang meencerminkan kekuatan keuanga negara. Baru-baru ini, negara berkembang seperti Cina, Rusia, dan India menjadi pembeli emas yang besar, sedangkan Amerika Serikat, Afrika Selatan, dan Australia termasuk diantara penjual emas yang besar.
+Dalam catatan sejarah, emas telah digunakan sebagai mata uang di berbagai belahan dunia. Saat ini, logam mulia seperti emas dipegang oleh bank sentral di semua negara untuk menjamin pembayaran kembali utang luar negeri, dan juga untuk mengendalikan inflasi yang mencerminkan kekuatan keuangan negara. Baru-baru ini, negara berkembang seperti Cina, Rusia, dan India menjadi pembeli emas yang besar, sedangkan Amerika Serikat, Afrika Selatan, dan Australia termasuk di antara penjual emas yang besar.
 
-Memprediksi kenaikan dan penurunan harga emas harian dapat membantu investor memutuskan kapan harus membeli atau menjual komoditas terseut. tetapi harga emas bergantung pada banyak faktor seperti harga logam mulia lainnya seperti harga minyak mentah, kinerja bursa saham, harga obligasi, nilai tukar mata uang, dan sebagainya. 
+Memprediksi kenaikan dan penurunan harga emas harian dapat membantu investor memutuskan kapan harus membeli atau menjual komoditas tersebut. tetapi harga emas bergantung pada banyak faktor seperti harga logam mulia lainnya seperti harga minyak mentah, kinerja bursa saham, harga obligasi, nilai tukar mata uang, dan sebagainya. 
 
 Tantangan pada proyek ini adalah untuk secara akurat memprediksi harga penutupan ETF emas yang disesuaikan di masa depan selama periode waktu tertentu di masa mendatang. Masalahnya adalah masalah regresi, karena nilai output yang merupakan harga penutupan yang disesuaikan dalam proyek ini adalah nilai kontinu.
 
@@ -26,21 +26,21 @@ Dari latar belakang masalah di atas, berikut merupakan rumusan masalah yang dida
 
 ### Goals
 Berikut ini adalah tujuan yang akan dicapai :
-- Memilih fitur-fitur yang memiliki hubungan atau pengaruh terhadap data harga penjualan emas
-- Melakukan pemrosesan terhadap data harga penjualan eams
-- Membuat model machine learning terbaik untuk memprediksi harga penjualan emas 
+- Memilih fitur-fitur yang memiliki hubungan atau pengaruh terhadap data harga penjualan emas.
+- Melakukan pemrosesan terhadap data harga penjualan emas.
+- Membuat model machine learning terbaik untuk memprediksi harga penjualan emas. 
 
 ### Solution Statements
 Berikut ini adalah solusi yang mungkin dapat dilakukan :
 - Melihat persebaran data pada data penjualan emas dan memilih variabel utama yang berhubungan langsung dengan harga penjualan emas.
 - Pemrosesan terhadap data penjualan emas yang dapat dilakukan antara lain, melihat apakah ada data yang hilang/kosong, memvisualisasikan data, melakukan beberapa perhitungan (MACD, RSI, SMA, dan Bollinger Bands), normalisasi, encoding fitur dan membagi data menjadi data latih, data validasi dan data uji. 
 - Membuat beberapa algoritma model seperti, 
-  - Decision Tree Regression, metode pembelajaran terawasi non-parametrik yang digunakan untuk klasifikasi dan regresi. Tujuannya adalah untuk membuat model yang memprediksi nilai variabel target dengan mempelajari aturan keputusan sederhana yang disipulkan dari fitur data. Sebuah pohon dapat dilihat sebagai pendekatan konstan sepotong demi sepotong. 
-    - Kelebihan, mudah disiapkan, lebih sedikit pembersihan data yang diperlukan dan mudah dibaca dan diafsirkan.   
+  - Decision Tree Regression, metode pembelajaran terawasi non-parametrik yang digunakan untuk klasifikasi dan regresi. Tujuannya adalah untuk membuat model yang memprediksi nilai variabel target dengan mempelajari aturan keputusan sederhana yang disimpulkan dari fitur data. Sebuah pohon dapat dilihat sebagai pendekatan konstan sepotong demi sepotong. 
+    - Kelebihan, mudah disiapkan, lebih sedikit pembersihan data yang diperlukan dan mudah dibaca dan ditafsirkan.   
     - Kekurangan, overfitting ketika kelas dan kriteria yang digunakan sangat banyak dan kurang efektif dalam memprediksi hasil dari variabel kontinu karena pohon keputusan cenderung kehilangan informasi saat mengkategorikan variabel ke dalam beberapa kategori.    
-  - Support Vector Regressor, penerapan SVM yang digunakan untuk kasus reresi yang outputnya berupa bilangan riil atau kontinu. Fungsi regresi dengan batasan deviasi tertentu sehingga dapat menhasilkan prediksi yang mendekati nilai aktual.
-    - Kelebihan,
-    - Kekurangan,  
+  - Support Vector Regressor, penerapan SVM yang digunakan untuk kasus regresi yang outputnya berupa bilangan riil atau kontinu. Fungsi regresi dengan batasan deviasi tertentu sehingga dapat menghasilkan prediksi yang mendekati nilai aktual.
+    - Kelebihan, cocok untuk outlier, model keputusan dapat dengan mudah diperbarui, memiliki kemampuan generalisasi yang baik dan akurasi prediksi yang tinggi, dan implementasinya mudah.
+    - Kekurangan, kurang cocok untuk kumpulan data besar, jika jumlah fitur untuk setiap titik data melebihi jumlah sampel data pelatihan-SVM akan berperforma buruk, dan model keputusan tidak berkinerja sangat baik ketika kumpulan data memiliki lebih banyak noise, yaitu kelas target tumpang tindih.
   - Random Forest, Pendekatan ensemble untuk menemukan pohon keputusan yang paling sesuai dengan data pelatihan dengan membuat banyak pohon keputusan dan kemudian menentukan yang "rata-rata". Bagian "acak" dari istilah tersebut mengacu pada pembangunan masing-masing pohon keputusan dari pilihan fitur secara acak; "hutan" mengacu pada kumpulan pohon keputusan.
     - Kelebihan, serbaguna dapat digunakan untuk tugas regresi dan klasifikasi, mengotomatiskan nilai-nilai hilang yang ada dalam data, normalisasi data tidak diperlukan karena menggunakan pendekatan berbasis aturan dan bekerja baik dengan nilai kategoris dan berkelanjutan.
     - Kekurangan, sejumlah besar pohon dapat membuat algoritma terlalu lambat dan tidak efektif untuk prediksi waktu nyata, cukup lambat untuk membuat prediksi setelah dilatih, dan membutuhkan banyak daya komputasi serta sumber daya karena membangun banyak pohon untuk digabungkan. 
@@ -48,17 +48,15 @@ Berikut ini adalah solusi yang mungkin dapat dilakukan :
     - Kelebihan, dapat menghindari overfitting, dapat diterapkan bahkan ketika jumlah fitur lebih besar dari jumlah data, dapat melakukan seleksi fitur dan cepat dalam hal inferensi dan fitting.
     - Kekurangan, model yang dipilih oleh lasso tidak stabil, hasil pemilihan model tidak intuitif untuk ditafsirkan.
   - RidgeCV, melakukan regularisasi L2 dan meminimalkan fungsi tujuan dengan menambahkan penalti ke jumlah kuadrat koefisien.
-    - Kelebihan, bekerja dengan baik bahkan di hadapan fitur yang sangat berkorelasi karena akan mencakup semuanya dalam model tetapi koefisien akan didistribusikan di antara mereka tergantung pada korelasinya.
-    - Kekurangan,
-  - Gradient Boosting Regressor, ermasuk dalam algoritma ensemble yang menggunakan pningkatan akurasi prediktor. Gradient boost membangun tree dengan 8 sampai 32 daun, menggunakan boosting untuk proses pengoptimalan dengan menggunakan loss function untuk meminimalisir kesalahan, dan cara kerja algoritma gradient boost adalah membangun satu tree untuk menyesuaikan data, lalu tree berikutnya dibangun untuk mengurangi residual (error).
+    - Kelebihan, dapat menghindari overfitting, bekerja dengan baik bahkan di hadapan fitur yang sangat berkorelasi karena akan mencakup semuanya dalam model tetapi koefisien akan didistribusikan di antara mereka tergantung pada korelasinya.
+    - Kekurangan, memasukkan semua prediktor dalam model akhir, tidak dapat melakukan pemilihan fitur dan mengecilkan koefisien menuju nol.
+  - Gradient Boosting Regressor, termasuk dalam algoritma ensemble yang menggunakan peningkatan akurasi predictor. Gradient boost membangun tree dengan 8 sampai 32 daun, menggunakan boosting untuk proses pengoptimalan dengan menggunakan loss function untuk meminimalisir kesalahan, dan cara kerja algoritma gradient boost adalah membangun satu tree untuk menyesuaikan data, lalu tree berikutnya dibangun untuk mengurangi residual (error).
     - Kelebihan, fleksibilitas, dapat mengoptimalkan fungsi kerugian yang berbeda dan menyediakan beberapa opsi penyetelan hyperparameter yang membuat fungsi tersebut sangat fleksibel, tidak diperlukan pra-pemrosesan data yang sering berfungsi dengan baik dengan nilai kategori dan numerik apa adanya.
-    - Kekurangan, komputasi mahal sering membutuhkan banyak pohon yang dapat menghabiskan waktu dan memori, membutuhkan pendarian grid yang besar selama penyetelan, dan GB akan terus ditingkatkan untuk meminimalkan semua kesalahan dapat terlalu menekankan outlier dan menyebabkan overfitting.
+    - Kekurangan, komputasi mahal sering membutuhkan banyak pohon yang dapat menghabiskan waktu dan memori, membutuhkan pencarian grid yang besar selama penyetelan, dan GB akan terus ditingkatkan untuk meminimalkan semua kesalahan dapat terlalu menekankan outlier dan menyebabkan overfitting.
   - Stochastic Gradient Descent, Algoritma penurunan gradien di mana ukuran batch adalah satu. Dengan kata lain, SGD bergantung pada satu contoh yang dipilih secara seragam secara acak dari kumpulan data untuk menghitung perkiraan gradien pada setiap langkah.
     - Kelebihan, secara komputasi cepat, hemat memori karena mempertimbangkan satu pengamatan pada satu waktu dari kumpulan data lengkap, dan untuk kumpulan data yang besar dapat menyatu lebih cepat karena menyebabkan pembaruan parameter lebih sering.
     - Kekurangan, karena pembaruan sering maka langkah-langkah yang diambil menuju minimal sangat bising sehingga menyebabkan penurunan gradien ke arah lain dan diperlukan waktu lebih lama untuk mencapai konvergensi ke fungsi kerugian minimum.
 
-
-  serta menerapkan hyperparamater tuning pada beberap model.
 
 ## Data Understanding
 
@@ -70,7 +68,7 @@ Informasi dataset :
 | ----------------------- | --------------------------------------------------------------------------------------- |
 | Sumber                  | [Kaggle Dataset : Gold Price Prediction Dataset](https://www.kaggle.com/sid321axn/gold-price-prediction-dataset) |
 | Lisensi                 | CC0: Public Domain                                                                      |
-| Kategori                | Finace, Tabulat data, Beginner, Economics, Regression                                   |
+| Kategori                | Finance, Tabular data, Beginner, Economics, Regression                                   |
 | Rating Penggunaan       | 9.4                                                                                     |
 | Jenis dan Ukuran Berkas | CSV (1.04 MB)                                                                           |
 
@@ -81,28 +79,28 @@ Atribut pada dataset :
   - High, harga tertinggi
   - Low,  harga terendah
   - Close, harga penutupan
-  - Adj Close, harga penutupan yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split.
+  - Adj Close, harga penutupan yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah dividen dan stock split.
   - Volume, menunjukkan jumlah perdagangan atau transaksi yang terjadi dalam perdagangan di suatu sesi.
-- S&P 500 Index, indeks yang terdiri atas 500 saham dengan market capitalization terbesar di Amerika Serikat. Indeks ini dimiliki oleh Standard & Poor. Indeks saham S&P500 meliputi 80% dari kapitalisasi pasar di USA.
+- S&P 500 Index, indeks yang terdiri atas 500 saham dengan market capitalization terbesar di Amerika Serikat. Indeks ini dimiliki oleh Standard & Poor. Indeks saham S&P 500 meliputi 80% dari kapitalisasi pasar di USA.
   - SP_open, harga pembukaan S&P 500 Index
   - SP_high, harga tertinggi S&P 500 Index
   - SP_low, harga terendah S&P 500 Index
   - SP_close, harga penutupan S&P 500 Index
-  - SP_Ajclose, harga penutupan S&P 500 Index yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split.
+  - SP_Ajclose, harga penutupan S&P 500 Index yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah dividen dan stock split.
   - SP_volume, menunjukkan jumlah perdagangan atau transaksi S&P 500 Index yang terjadi dalam perdagangan di suatu sesi.
-- Dow Jones Index, indeks pasar saham yang didirikan oleh editor The Wall Street Jurnal dan pendiri Dow Jones & Company Charles Cow. Bursa saham ini terdiri dari 30 perusahaan terbesar di Amerika Serikat.
+- Dow Jones Index, indeks pasar saham yang didirikan oleh editor The Wall Street Journal dan pendiri Dow Jones & Company Charles Cow. Bursa saham ini terdiri dari 30 perusahaan terbesar di Amerika Serikat.
   - DJ_open, harga pembukaan Dow Jones Index
   - DJ_high, harga tertinggi Dow Jones Index
   - DJ_low, harga terendah Dow Jones Index
   - DJ_close, harga penutupan Dow Jones Index
-  - DJ_Ajclose, harga penutupan Dow Jones Index yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split.
+  - DJ_Ajclose, harga penutupan Dow Jones Index yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah dividen dan stock split.
   - DJ_volume, menunjukkan jumlah perdagangan atau transaksi Dow Jones Index yang terjadi dalam perdagangan di suatu sesi.
 - Eldorado Gold Corporation, perusahaan Kanada yang memiliki dan mengoperasikan tambang emas di Turki, Yunani, dan Kanada.
   - EG_open, harga pembukaan Eldorado Gold Corporation
   - EG_high, harga tertinggi Eldorado Gold Corporation
   - EG_low, harga terendah Eldorado Gold Corporation
   - EG_close, harga penutupan Eldorado Gold Corporation
-  - EG_Ajclose, harga penutupan Eldorado Gold Corporation yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split.
+  - EG_Ajclose, harga penutupan Eldorado Gold Corporation yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah dividen dan stock split.
   - EG_volume, menunjukkan jumlah perdagangan atau transaksi Eldorado Gold Corporation yang terjadi dalam perdagangan di suatu sesi.
 - EURO - USD Exchange Rate, Nilai tukar satuan mata uang Euro terhadap USD. 
   - EU_Price, harga jual
@@ -162,14 +160,14 @@ Atribut pada dataset :
   - GDX_High, harga tertinggi Gold Miners ETF
   - GDX_Low, harga terendah Gold Miners ETF
   - GDX_Close, harga penutupan Gold Miners ETF
-  - GDX_Adj Close, harga penutupan Gold Miners ETF yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split.
+  - GDX_Adj Close, harga penutupan Gold Miners ETF yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah dividen dan stock split.
   - GDX_Volume, menunjukkan jumlah perdagangan atau transaksi Gold Miners ETF yang terjadi dalam perdagangan di suatu sesi.
 - Oil ETF USO, produk yang diperdagangkan di bursa yang berusaha memberikan hasil investasi yang sesuai dengan pergerakan harga harian minyak mentah ringan dan manis WTI. 
   - USO_Open, harga pembukaan Oil ETF USO
   - USO_High, harga tertinggi Oil ETF USO
   - USO_Low, harga terendah Oil ETF USO
   - USO_Close, harga penutupan Oil ETF USO
-  - USO_Adj Close, harga penutupan Oil ETF USO yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah deviden dan stock split. 
+  - USO_Adj Close, harga penutupan Oil ETF USO yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah dividen dan stock split. 
   - USO_Volume, menunjukkan jumlah perdagangan atau transaksi Oil ETF USO yang terjadi dalam perdagangan di suatu sesi.
 
 Keterangan:
@@ -189,16 +187,16 @@ Kemudian dilakukan perhitungan pada data variabel target antara lain :
 
   Dengan demikian, MACD akan bernilai positif jika EMa 12 hari lebih besar dari EMA 26 hari dan berlaku sebaliknya. 
 
-- RSI (Relative Strength Index), indikator yang digunakan dalam mengukur besarnya volatilitas harga sebuah aset. Indikator ini dilakukan untuk mengevaluasi apakah aset tersebut terbilang dalam posisi jenuh beli (overbounght) atau jenuh jual (oversold). RSI ditampilkan sebagai osilator (grafik garis yang bergerak antara dua titik ekstrem) dengan nilai berada di antara 0 hingga 100. Rumus RSI sebagai berikut.
+- RSI (Relative Strength Index), indikator yang digunakan dalam mengukur besarnya volatilitas harga sebuah aset. Indikator ini dilakukan untuk mengevaluasi apakah aset tersebut terbilang dalam posisi jenuh beli (overbought) atau jenuh jual (oversold). RSI ditampilkan sebagai osilator (grafik garis yang bergerak antara dua titik ekstrim) dengan nilai berada di antara 0 hingga 100. Rumus RSI sebagai berikut.
 
   ![RSI](https://user-images.githubusercontent.com/68459186/138889935-e40b7183-a5bc-411a-a4f9-7b9a0e8a9ab4.png)
 
-  Rata-rata keuntungan atau kerugian yang digunakan dalam perhitungan adalah presentase keuntungan atau kerugian rata-rata selama periode kilas balik (dua titik yang dipilih untuk dibandingkan, bisa selama 7 hari, bisa selama 14 hari, dst).
+  Rata-rata keuntungan atau kerugian yang digunakan dalam perhitungan adalah persentase  keuntungan atau kerugian rata-rata selama periode kilas balik (dua titik yang dipilih untuk dibandingkan, bisa selama 7 hari, bisa selama 14 hari, dst).
 
-- SMA (Simple Moving Average), bentuk simpel dari Moving Average. Moving Average untuk memberi petunjuk mengenai arah tren harga sebuah aset di masa depan. Pada Simpel Moving Average indikator dihitung dengan menggunakan rerata aritmatika dari salah satu set nilai tertentu, biasanya harga penutupan dengan jumlah periode dalam kisaran itu. Dengan kata lain, serangkaian data aset digabungkan dulu bersama-sama untuk kemudian dibagi menjadi harga aset di set tertentu tersebut. Rumus SMA sebagai berikut.
+- SMA (Simple Moving Average), bentuk simpel dari Moving Average. Moving Average untuk memberi petunjuk mengenai arah tren harga sebuah aset di masa depan. Pada Simple  Moving Average indikator dihitung dengan menggunakan rerata aritmatika dari salah satu set nilai tertentu, biasanya harga penutupan dengan jumlah periode dalam kisaran itu. Dengan kata lain, serangkaian data aset digabungkan dulu bersama-sama untuk kemudian dibagi menjadi harga aset di set tertentu tersebut. Rumus SMA sebagai berikut.
   ![SMA](https://user-images.githubusercontent.com/68459186/138896477-358fc5e2-a4af-49e7-a493-95a3da06d5a8.png)
 
-- Bolliger Band, alat analisis teknis yang dikembangkan oleh John Bollinger untuk menghasilkan sinyak oversold atau overbought. Ada tiga baris yang membentuk Bollinger Bands, SMA (middle band), upper band, dan lower band. Upper dan lower band biasanya 2 standar deviasi +/- dari rata-rata bergerak sederhana selama 20 hari, tetapi dapat dimodifikasi. Bollinger band dimanfaatkan untuk menganalisis pergerakan harga sebuah aset atau komoditas tertentu. Rumus bollinger band sebagai berikut.
+- Bollinger  Band, alat analisis teknis yang dikembangkan oleh John Bollinger untuk menghasilkan sinyal oversold atau overbought. Ada tiga baris yang membentuk Bollinger Bands, SMA (middle band), upper band, dan lower band. Upper dan lower band biasanya 2 standar deviasi +/- dari rata-rata bergerak sederhana selama 20 hari, tetapi dapat dimodifikasi. Bollinger band dimanfaatkan untuk menganalisis pergerakan harga sebuah aset atau komoditas tertentu. Rumus bollinger band sebagai berikut.
   ![image](https://user-images.githubusercontent.com/68459186/138906534-cc3772a6-99e3-4ada-87a1-17bb252b8a49.png)
 
 Sehingga fitur yang digunakan bertambah dengan adanya hasil perhitungan yang dilakukan, maka variabel yang digunakan antara lain :
@@ -250,7 +248,7 @@ Berikut ini merupakan visualisasi dari data fitur yang digunakan :
   ![image](https://user-images.githubusercontent.com/68459186/138908914-a5b878b8-d44d-4fe5-9016-8d634d351597.png)
 
 ## Data Preparation
-- menerapkan minimal satu (baiknya 2 atau lebih) teknik preparation, menjelaskan mengapa diperlukan tahapan tersebut, 
+
 Teknik preparation yang digunakan pada proyek ini antara lain :
 - Menghilangkan data yang bernilai 0 atau kosong
   
@@ -259,7 +257,7 @@ Teknik preparation yang digunakan pada proyek ini antara lain :
   Bisa dilihat pada gambar diatas menunjukan jumlah nilai yang kosong atau NaN yang terdapat pada data dikarenakan jumlahnya tidak terlalu banyak sehingga diputuskan untuk menghapusnya. Selain itu, karena jumlah yang tidak terlalu banyak sehingga tidak terlalu mempengaruhi fitur atau hilangnya informasi yang dibutuhkan. 
   
 - Normalisasi
-  Normalisasi dilakukan dengan tujuan untuk mengubah nilai kolom numerik dalam data ke skala yang sama, tanpa menggangu perbedaan dalam rentang nilai. Normalisasi dilakukan pada fitur-fitur yang akan digunakan. Proses normalisasi dilakukan menggunakan fungsi MinMaxScaler dari sklearn.
+  Normalisasi dilakukan dengan tujuan untuk mengubah nilai kolom numerik dalam data ke skala yang sama, tanpa mengganggu perbedaan dalam rentang nilai. Normalisasi dilakukan pada fitur-fitur yang akan digunakan. Proses normalisasi dilakukan menggunakan fungsi MinMaxScaler dari sklearn.
 
 - Train-Test-Split 
   Dilakukan pembagian dataset menjadi 3 bagian, yaitu data latih, data validasi, dan data uji. Pertama, dilakukan pengambilan data untuk validasi sebanyak 89 data terakhir pada setiap variabel. Kemudian sisanya dibagi menjadi data latih dan data uji dengan perbandingan 80:20. Data latih digunakan untuk proses pelatihan model dengan data sebanyak 80% dari dataset yang sudah dikurangi, sedangkan data uji digunakan untuk menguji model yang sudah dilatih, serta data validasi digunakan untuk mengecek akurasi dari model yang sudah dilatih sebelum digunakan pada data uji. Pembagian dataset dilakukan menggunakan fungsi train_test_split dari sklearn. 
@@ -276,7 +274,7 @@ Pada pemodelan menggunakan beberapa algoritma sebagai berikut :
 
 ## Evaluation
 
-Matrik evalusi yang digunakan :
+Matrik evaluasi yang digunakan :
 - RMSE, Metrik kesalahan akar rata-rata kuadrat adalah ukuran yang sering digunakan untuk perbedaan antara nilai yang diprediksi oleh model atau penaksir dan nilai yang diamati. Metrik ini berkisaran dari nol hingga tak terhingga; nilai yang lebih rendah menunjukkan kualitas model yang lebih tinggi. Akar kuadrat dari Mean Squared Error.
 
 - R2 Score, Kuadrat dari koefisien korelasi Pearson antara label dan nilai prediksi. Metrik ini berkisaran antara nol dan satu; nilai yang lebih tinggi menunjukkan kualitas model yang lebih tinggi. 
@@ -293,7 +291,7 @@ Dari data diatas sehingga dibuat sebuah tabel untuk mengurutkan algoritma dengan
 
 ![image](https://user-images.githubusercontent.com/68459186/139089080-cd43ad37-46cc-49d7-8f36-8a5efbb84fc7.png)
 
-Dari hasil yang didapatkan dari pembuatan beberapa model diatas maka didapatkan nilai RMSE dan R2 Score seperti diatas. Sehingga dapat digunakan model dengan nilai RMSE terendah dan R2 Score yang tinggi yang memiliki performa yang baik untuk digunakan sebagai model prediksi harga emas. Model yang mungkin cocok untuk digunakan adalah LassoCV, SVR yang diberikan Hyperparameter Tunning, dan RidgeCV. 
+Dari hasil yang didapatkan dari pembuatan beberapa model diatas maka didapatkan nilai RMSE dan R2 Score seperti diatas. Sehingga dapat digunakan model dengan nilai RMSE terendah dan R2 Score yang tinggi yang memiliki performa yang baik untuk digunakan sebagai model prediksi harga emas. Model yang mungkin cocok untuk digunakan adalah LassoCV, SVR yang diberikan Hyperparameter Tuning, dan RidgeCV. 
 
 ## Referensi
 - Fernando, Jason. (2021). _Moving Average Convergence Divergence (MACD)_. Diakses pada 26 Oktober 2021, dari https://www.investopedia.com/terms/m/macd.asp
@@ -309,4 +307,4 @@ Dari hasil yang didapatkan dari pembuatan beberapa model diatas maka didapatkan 
 - Majumder, Sohom. (2021). _Gold price prediction-Time Series split & LGBM_. Diakses pada 18 Oktober 2021, dari https://www.kaggle.com/sohommajumder21/gold-price-prediction-time-series-split-lgbm
 - Siddhartha, Manu. (2021). _Gold Price Prediction Using Machine Learning_. Diakses pada 17 Oktober 2021, dari https://www.kaggle.com/sid321axn/gold-price-prediction-using-machine-learning
 - Dranitsyna, Ekaterina. (2021). _gold_price_model_. Diakses pada 18 Oktober 2021, dari https://www.kaggle.com/ekaterinadranitsyna/gold-price-model
--  Venable, Hayden. (2021). _GOld Price Predicion with PCA and Regression_. Diakses pada 17 Oktober 2021, dari https://www.kaggle.com/haydenvenable/gold-price-prediction-with-pca-and-regression
+-  Venable, Hayden. (2021). _Gold Price Prediction with PCA and Regression_. Diakses pada 17 Oktober 2021, dari https://www.kaggle.com/haydenvenable/gold-price-prediction-with-pca-and-regression
