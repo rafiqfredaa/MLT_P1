@@ -36,13 +36,28 @@ Berikut ini adalah solusi yang mungkin dapat dilakukan :
 - Pemrosesan terhadap data penjualan emas yang dapat dilakukan antara lain, melihat apakah ada data yang hilang/kosong, memvisualisasikan data, melakukan beberapa perhitungan (MACD, RSI, SMA, dan Bollinger Bands), normalisasi, encoding fitur dan membagi data menjadi data latih, data validasi dan data uji. 
 - Membuat beberapa algoritma model seperti, 
   - Decision Tree Regression, metode pembelajaran terawasi non-parametrik yang digunakan untuk klasifikasi dan regresi. Tujuannya adalah untuk membuat model yang memprediksi nilai variabel target dengan mempelajari aturan keputusan sederhana yang disipulkan dari fitur data. Sebuah pohon dapat dilihat sebagai pendekatan konstan sepotong demi sepotong. 
-    - Kelebihan, mudah disiapkan, lebih sedikit pembersihan data yang diperlukan dan mudah dibaca dan diafsirkan   
+    - Kelebihan, mudah disiapkan, lebih sedikit pembersihan data yang diperlukan dan mudah dibaca dan diafsirkan.   
     - Kekurangan, overfitting ketika kelas dan kriteria yang digunakan sangat banyak dan kurang efektif dalam memprediksi hasil dari variabel kontinu karena pohon keputusan cenderung kehilangan informasi saat mengkategorikan variabel ke dalam beberapa kategori.    
-  - Support Vector Regressor, 
-  - Random Forest
-  - LassoCV dan RidgeCV
-  - Gradient Boosting Regressor
-  - Stochastic Gradient Descent
+  - Support Vector Regressor, penerapan SVM yang digunakan untuk kasus reresi yang outputnya berupa bilangan riil atau kontinu. Fungsi regresi dengan batasan deviasi tertentu sehingga dapat menhasilkan prediksi yang mendekati nilai aktual.
+    - Kelebihan,
+    - Kekurangan,  
+  - Random Forest, Pendekatan ensemble untuk menemukan pohon keputusan yang paling sesuai dengan data pelatihan dengan membuat banyak pohon keputusan dan kemudian menentukan yang "rata-rata". Bagian "acak" dari istilah tersebut mengacu pada pembangunan masing-masing pohon keputusan dari pilihan fitur secara acak; "hutan" mengacu pada kumpulan pohon keputusan.
+    - Kelebihan, serbaguna dapat digunakan untuk tugas regresi dan klasifikasi, mengotomatiskan nilai-nilai hilang yang ada dalam data, normalisasi data tidak diperlukan karena menggunakan pendekatan berbasis aturan dan bekerja baik dengan nilai kategoris dan berkelanjutan.
+    - Kekurangan, sejumlah besar pohon dapat membuat algoritma terlalu lambat dan tidak efektif untuk prediksi waktu nyata, cukup lambat untuk membuat prediksi setelah dilatih, dan membutuhkan banyak daya komputasi serta sumber daya karena membangun banyak pohon untuk digabungkan. 
+  - LassoCV, (Least Absolute Shrinkage and Selection Operator) melakukan regularisasi L1, yaitu menambahkan faktor penjumlahan nilai mutlak koefisien dalam tujuan optimasi dan meminimalkan fungsi tujuan dengan menambahkan penalti ke jumlah nilai absolut koefisien atau biasa dikenal dengan metode deviasi absolut terkecil. 
+    - Kelebihan, dapat menghindari overfitting, dapat diterapkan bahkan ketika jumlah fitur lebih besar dari jumlah data, dapat melakukan seleksi fitur dan cepat dalam hal inferensi dan fitting.
+    - Kekurangan, model yang dipilih oleh lasso tidak stabil, hasil pemilihan model tidak intuitif untuk ditafsirkan.
+  - RidgeCV, melakukan regularisasi L2 dan meminimalkan fungsi tujuan dengan menambahkan penalti ke jumlah kuadrat koefisien.
+    - Kelebihan, bekerja dengan baik bahkan di hadapan fitur yang sangat berkorelasi karena akan mencakup semuanya dalam model tetapi koefisien akan didistribusikan di antara mereka tergantung pada korelasinya.
+    - Kekurangan,
+  - Gradient Boosting Regressor, ermasuk dalam algoritma ensemble yang menggunakan pningkatan akurasi prediktor. Gradient boost membangun tree dengan 8 sampai 32 daun, menggunakan boosting untuk proses pengoptimalan dengan menggunakan loss function untuk meminimalisir kesalahan, dan cara kerja algoritma gradient boost adalah membangun satu tree untuk menyesuaikan data, lalu tree berikutnya dibangun untuk mengurangi residual (error).
+    - Kelebihan, fleksibilitas, dapat mengoptimalkan fungsi kerugian yang berbeda dan menyediakan beberapa opsi penyetelan hyperparameter yang membuat fungsi tersebut sangat fleksibel, tidak diperlukan pra-pemrosesan data yang sering berfungsi dengan baik dengan nilai kategori dan numerik apa adanya.
+    - Kekurangan, komputasi mahal sering membutuhkan banyak pohon yang dapat menghabiskan waktu dan memori, membutuhkan pendarian grid yang besar selama penyetelan, dan GB akan terus ditingkatkan untuk meminimalkan semua kesalahan dapat terlalu menekankan outlier dan menyebabkan overfitting.
+  - Stochastic Gradient Descent, Algoritma penurunan gradien di mana ukuran batch adalah satu. Dengan kata lain, SGD bergantung pada satu contoh yang dipilih secara seragam secara acak dari kumpulan data untuk menghitung perkiraan gradien pada setiap langkah.
+    - Kelebihan, secara komputasi cepat, hemat memori karena mempertimbangkan satu pengamatan pada satu waktu dari kumpulan data lengkap, dan untuk kumpulan data yang besar dapat menyatu lebih cepat karena menyebabkan pembaruan parameter lebih sering.
+    - Kekurangan, karena pembaruan sering maka langkah-langkah yang diambil menuju minimal sangat bising sehingga menyebabkan penurunan gradien ke arah lain dan diperlukan waktu lebih lama untuk mencapai konvergensi ke fungsi kerugian minimum.
+
+
   serta menerapkan hyperparamater tuning pada beberap model.
 
 ## Data Understanding
@@ -252,13 +267,12 @@ Teknik preparation yang digunakan pada proyek ini antara lain :
 ## Modeling
 
 Pada pemodelan menggunakan beberapa algoritma sebagai berikut :
-- Decision Tree Regression, salah satu metode klasifikasi populer, karena mudah diinterpretasi oleh manusia. Decision tree adalah model prediksi menggunakan struktur pohon atau struktur berhirarki. Konsepnya adalah mengubah data menjadi aturan-aturan keputusan. Manfaat untuk mem-break down proses pengambilan keputusan yang kompleks menjadi lebih simpel, sehingga pengambilan keputusan akan lebih menginterpretasikan solusi dari permasalahan. Selain itu, decision tree juga berguna untuk mengekplorasi data, menemukan hubungan tersembunyi antara sejumlah calon variabel input dengan sebuah variabel target. Kelebihan, mampu mengeliminasi perhitungan atau data-data yang sekiranya tidak diperlukan.  
+- Decision Tree Regression,  
 - Support Vector Regressor, Support Vector Machine juga dapat digunakan sebagai metode regresi, mempertahankan semua fitur utama yang menjadi ciri algoritma (margin maksimal). Support Vector Regression (SVR) menggunakan prinsip yang sama dengan SVM untuk klasifikasi, dengan hanya beberapa perbedaan kecil. Pertama-tama, karena keluaran adalah bilangan real, menjadi sangat sulit untuk memprediksi informasi yang ada, yang memiliki kemungkinan tak terbatas. Dalam kasus regresi, margin toleransi (epsilon) diatur dalam perkiraan ke SVM yang akan sudah diminta dari masalah. Tapi selain fakta ini, ada juga alasan yang lebih rumit, algoritmanya lebih rumit sehingga harus dipertimbangkan. Namun, ide utamanya selalu sama: untuk meminimalkan kesalahan, individualisasi hyperplane yang memaksimalkan margin, dengan mengingat bahwa bagian dari kesalahan ditoleransi.
-- Random Forest, Pendekatan ensemble untuk menemukan pohon keputusan yang paling sesuai dengan data pelatihan dengan membuat banyak pohon keputusan dan kemudian menentukan yang "rata-rata". Bagian "acak" dari istilah tersebut mengacu pada pembangunan masing-masing pohon keputusan dari pilihan fitur secara acak; "hutan" mengacu pada kumpulan pohon keputusan.
-- LassoCV dan RidgeCV, Pada regresi ridge ada 3 konsep, yaitu regularization, L1 Loss function atau L1 Regularization, dan L2 Loss function atau L2 Regularization. Regularization digunakan untuk menyelesaikan masalah performa model yang tidak sinkron. Maksudnya, suatu model memiliki performa yang baik untuk data latih tetapi memiliki performa yang buruk untuk data uji. regularization menyelesaikan masalah ini dengan menambahkan penalti ke fungsi tujuan dan mengontrol kompleksitas model dengan penalti tersebut. Regularization biasanya digunakan untuk situasi variabel berjumlah besar, rasio jumlah observasi dan jumlah variabel kecil, dan adanya multikolinieritas. Maksud dari istilah L1 Loss function atau L1 Regularization adalah meminimalkan fungsi tujuan dengan menambahkan penalti ke jumlah nilai absolut koefisien atau biasa dikenal dengan metode deviasi absolut terkecil sedangkan maksud dari L2 Loss function atau L2 Regularization adalah meminimalkan fungsi tujuan dengan menambahkan penalti ke jumlah kuadrat koefisien.
-  Kata Lasso pada regresi lasso merupakan singkatan dari Least Absolute Shrinkage and Selection Operator. Metode ini menggunakan teknik L1 Regularization dalam fungsi tujuan. Keuntungan regresi lasso dibandingkan regresi ridge adalah regresi lasso dapat memilih variabel bawaan serta penyusutan parameter. Persamaan regresi ridge dan laso adalah sama-sama digunakan untuk menangani multikolinieritas. Regresi ridge secara komputasi lebih efisien jika dibandingkan regresi lasso. 
-- Gradient Boosting Regressor, Termasuk dalam algoritma ensemble yang menggunakan pningkatan akurasi prediktor. Gradient boost membangun tree dengan 8 sampai 32 daun, menggunakan boosting untuk proses pengoptimalan dengan menggunakan loss function untuk meminimalisir kesalahan, dan cara kerja algoritma gradient boost adalah membangun satu tree untuk menyesuaikan data, lalu tree berikutnya dibangun untuk mengurangi residual (error).
-- Stochastic Gradient Descent, Algoritma penurunan gradien di mana ukuran batch adalah satu. Dengan kata lain, SGD bergantung pada satu contoh yang dipilih secara seragam secara acak dari kumpulan data untuk menghitung perkiraan gradien pada setiap langkah. 
+- Random Forest, 
+- LassoCV dan RidgeCV, 
+- Gradient Boosting Regressor,
+- Stochastic Gradient Descent,  
 
 ## Evaluation
 
