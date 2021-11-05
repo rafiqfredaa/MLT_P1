@@ -311,9 +311,9 @@ Berikut ini grafik yang digunakan untuk membandingkan nilai RMSE dari setiap mod
 
 Dari data diatas sehingga dibuat sebuah tabel untuk mengurutkan algoritma dengan performa tinggi ke rendah, sebagai berikut ini. 
 
+![image](https://user-images.githubusercontent.com/68459186/140458229-c2b816d2-4379-41dd-beb3-9bab3651a0a7.png)
 
-
-Dari hasil yang didapatkan dari pembuatan beberapa model diatas maka didapatkan nilai RMSE dan R2 Score seperti diatas. Sehingga dapat digunakan model dengan nilai RMSE terendah dan R2 Score yang tinggi yang memiliki performa yang baik untuk digunakan sebagai model prediksi harga emas. Model yang mungkin cocok untuk digunakan adalah LassoCV, SVR yang diberikan Hyperparameter Tuning, dan RidgeCV. 
+Dari hasil yang didapatkan dari pembuatan beberapa model diatas maka didapatkan nilai RMSE dan R2 Score seperti diatas. Sehingga dapat digunakan model dengan nilai RMSE terendah dan R2-Score tertinggi untuk digunakan sebagai model prediksi harga emas. Model yang mungkin cocok untuk digunakan adalah Support Vector Regressor, Gradient Boosting dan RidgeCV.  
 
 ## Referensi
 - Fernando, Jason. (2021). _Moving Average Convergence Divergence (MACD)_. Diakses pada 26 Oktober 2021, dari https://www.investopedia.com/terms/m/macd.asp
