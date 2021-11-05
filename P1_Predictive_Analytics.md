@@ -286,7 +286,7 @@ Pada proses pemodelan menggunakan beberapa algoritma sebagai berikut:
 - Random Forest, prinsip dasar seperti decision tree. Random forest terdiri dari beberapa decision tree yang akan menghasilkan output yang berbeda-beda, lalu random forest akan melakukan voting untuk menentukan hasil mayoritas dari semua decision tree. Parameter yang digunakan adalah 'n_estimators=50' berarti jumlah pohon di hutan yang digunakan berjumlah 50 dan 'random_state=0' untuk mengatur generator angka acak yang digunakan. 
 - LassoCV, . Parameter yang digunakan adalah n_alphas=1000, max_iter=3000, random_state=0
 - RidgeCV, . Parameter yang digunakan adalah gcv_mode='auto'
-- Gradient Boosting Regressor, . Parameter yang digunakan adalah 'n_estimators=70' , 'learning_rate=0.1' , 'max_depth=4' , 'random_state=0' , 'loss='ls'' .
+- Gradient Boosting Regressor, menggunakan ensamble dari decision tree, dengan membuat simple decision tree yang terpisah dan mengkombinasikan output dari setiap decision tree terseut untuk mendapatkan hasil akhir. Parameter yang digunakan adalah 'n_estimators=70' menunjukkan jumlah tahapan boosting yang harus dilakukan yaitu 70 tahapan, 'learning_rate=0.1' mununjukkan kecepatan pembelajaran, 'max_depth=4' kedalaman maksimum estimator regresi individu, 'random_state=0' untuk mengontrol banih acak yang diberikan ke setiap estimator tree pada setiap iterasi boosting dan 'loss='ls'' yaitu fungsi kerugian untuk dioptimalkan 'ls' mengacu pada kesalahan kuadrat untuk regresi.
 - Stochastic Gradient Descent, . Parameter yang digunakan adalah 'max_iter=1000' , 'tol=1e-3' , 'loss='squared_epsilon_insensitive'' , 'penalty='l1'' , 'alpha=0.1' .
 
 ## Evaluation
