@@ -72,6 +72,7 @@ Informasi dataset :
 | Rating Penggunaan       | 9.4                                                                                     |
 | Jenis dan Ukuran Berkas | CSV (1.04 MB)                                                                           |
 
+### Deskripsi Variabel
 Atribut pada dataset :
 
 - Gold ETF, komoditas yang diperdagangkan seperti saham. Meski terdiri dari aset berupa emas, investor sebenarnya tidak memiliki komoditas fisiknya. Investasi emas ETF dikenakan biaya tambahan baik biaya broker dan penebusan ETF.
@@ -194,20 +195,34 @@ Kemudian dilakukan perhitungan pada data variabel target antara lain :
   Rata-rata keuntungan atau kerugian yang digunakan dalam perhitungan adalah persentase  keuntungan atau kerugian rata-rata selama periode kilas balik (dua titik yang dipilih untuk dibandingkan, bisa selama 7 hari, bisa selama 14 hari, dst).
 
 - SMA (Simple Moving Average), bentuk simpel dari Moving Average. Moving Average untuk memberi petunjuk mengenai arah tren harga sebuah aset di masa depan. Pada Simple  Moving Average indikator dihitung dengan menggunakan rerata aritmatika dari salah satu set nilai tertentu, biasanya harga penutupan dengan jumlah periode dalam kisaran itu. Dengan kata lain, serangkaian data aset digabungkan dulu bersama-sama untuk kemudian dibagi menjadi harga aset di set tertentu tersebut. Rumus SMA sebagai berikut.
+  
   ![SMA](https://user-images.githubusercontent.com/68459186/138896477-358fc5e2-a4af-49e7-a493-95a3da06d5a8.png)
 
 - Bollinger  Band, alat analisis teknis yang dikembangkan oleh John Bollinger untuk menghasilkan sinyal oversold atau overbought. Ada tiga baris yang membentuk Bollinger Bands, SMA (middle band), upper band, dan lower band. Upper dan lower band biasanya 2 standar deviasi +/- dari rata-rata bergerak sederhana selama 20 hari, tetapi dapat dimodifikasi. Bollinger band dimanfaatkan untuk menganalisis pergerakan harga sebuah aset atau komoditas tertentu. Rumus bollinger band sebagai berikut.
+  
   ![image](https://user-images.githubusercontent.com/68459186/138906534-cc3772a6-99e3-4ada-87a1-17bb252b8a49.png)
 
 Sehingga fitur yang digunakan bertambah dengan adanya hasil perhitungan yang dilakukan, maka variabel yang digunakan antara lain :
-- open, high, low, close, adj close, adj close_returns, rsi_adj close, upper_band_adj close, lower_band_adj close, dif_adj close, dan macd_adj close.
+- open, harga pembukaan
+- high, harga tertinggi
+- low,  harga terendah
+- close, harga penutupan
+- adj close, harga penutupan yang telah disesuaikan ketika terjadi aksi korporasi perusahaan, dalam hal ini adalah dividen dan stock split.
+- adj close_returns, menghitung pengembalian harian
+- rsi_adj close, mengukur besarnya volatilitas harga pada adj close
+- upper_band_adj close, batas atas bollinger band pada adj close
+- lower_band_adj close, batas bawah bollinger band pada adj close
+- dif_adj close, selisih nilai antara data periode 26 dengan periode 12 pada adj close
+- macd_adj close, 
 
+### Menangani Missing Value
 Menghilangkan data yang bernilai 0 atau kosong
   
 ![image](https://user-images.githubusercontent.com/68459186/139034942-5b1ea3b5-439d-4e8a-a4a3-889ef4df4488.png)
   
 Bisa dilihat pada gambar diatas menunjukan jumlah nilai yang kosong atau NaN yang terdapat pada data dikarenakan jumlahnya tidak terlalu banyak sehingga diputuskan untuk menghapusnya. Selain itu, karena jumlah yang tidak terlalu banyak sehingga tidak terlalu mempengaruhi fitur atau hilangnya informasi yang dibutuhkan. 
 
+### Memvisualisasikan Data
 Berikut ini merupakan visualisasi dari data fitur yang digunakan :
 - open,
 
@@ -258,7 +273,7 @@ Berikut ini merupakan visualisasi dari data fitur yang digunakan :
 Teknik preparation yang digunakan pada proyek ini antara lain :
 
 - Train-Test-Split 
-  Dilakukan pembagian dataset menjadi 3 bagian, yaitu data latih, data validasi dan data uji. Pertama, dilakukan pembagian menjadi data latih dan data uji dengan perbandingan 80:20.  Setelah pembagian dataset dilakukan pengurutan karena data hasil pembagian berbentuk acak sehingga perlu diurutkan kembali berdasarkan urutan waktu agar data yang akan digunakan sesuai dengan kondisi aslinya. Kemudian, mengambil data latih untuk validasi sebanyak 89 data terakhir pada setiap variabel. Data latih digunakan untuk proses pelatihan model dengan data sebanyak 80% dari dataset yang kemudian dikurangi untuk data validasi, sedangkan data uji sebanyak 20% dari dataset digunakan untuk menguji model yang sudah dilatih, serta data validasi digunakan untuk mengecek akurasi dari model yang sudah dilatih sebelum digunakan untuk prediksi pada data uji. Pembagian dataset dilakukan menggunakan fungsi train_test_split dari sklearn.
+  Dilakukan pembagian dataset menjadi s bagian, yaitu data latih dan data uji. Pertama, dilakukan pembagian menjadi data latih dan data uji dengan perbandingan 80:20.  Setelah pembagian dataset dilakukan pengurutan karena data hasil pembagian berbentuk acak sehingga perlu diurutkan kembali berdasarkan urutan waktu agar data yang akan digunakan sesuai dengan kondisi aslinya. Data latih digunakan untuk proses pelatihan model dengan data sebanyak 80% dari dataset, sedangkan data uji sebanyak 20% dari dataset digunakan untuk menguji model yang sudah dilatih. Pembagian dataset dilakukan menggunakan fungsi train_test_split dari sklearn.
 
 - Normalisasi
   Normalisasi dilakukan dengan tujuan untuk mengubah nilai kolom numerik dalam data ke skala yang sama, tanpa mengganggu perbedaan dalam rentang nilai. Normalisasi dilakukan pada fitur-fitur yang akan digunakan. Proses normalisasi dilakukan menggunakan fungsi MinMaxScaler dari sklearn. Proses normalisasi dilakukan setelah pembagian data dengan tujuan menghindari kebocoran data pada data uji. 
@@ -288,11 +303,11 @@ Matrik evaluasi yang digunakan :
 
 Berikut ini merupakan hasil dari proses pemodelan yang telah dilakukan menggunakan beberapa algoritma, model dilatih menggunakan data latih dan dicoba memprediksi pada data validasi yang dapat dilihat pada gambar visualisasi berikut ini.
   
-
+![image](https://user-images.githubusercontent.com/68459186/140457451-c4dc6f16-20e1-45b5-a585-59a31250cc62.png)
 
 Berikut ini grafik yang digunakan untuk membandingkan nilai RMSE dari setiap model yang telah dibuat.
 
-
+![image](https://user-images.githubusercontent.com/68459186/140457437-97a36147-1e67-490f-b90f-046fc2896b1d.png)
 
 Dari data diatas sehingga dibuat sebuah tabel untuk mengurutkan algoritma dengan performa tinggi ke rendah, sebagai berikut ini. 
 
