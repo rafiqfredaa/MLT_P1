@@ -202,6 +202,12 @@ Kemudian dilakukan perhitungan pada data variabel target antara lain :
 Sehingga fitur yang digunakan bertambah dengan adanya hasil perhitungan yang dilakukan, maka variabel yang digunakan antara lain :
 - open, high, low, close, adj close, adj close_returns, rsi_adj close, upper_band_adj close, lower_band_adj close, dif_adj close, dan macd_adj close.
 
+Menghilangkan data yang bernilai 0 atau kosong
+  
+![image](https://user-images.githubusercontent.com/68459186/139034942-5b1ea3b5-439d-4e8a-a4a3-889ef4df4488.png)
+  
+Bisa dilihat pada gambar diatas menunjukan jumlah nilai yang kosong atau NaN yang terdapat pada data dikarenakan jumlahnya tidak terlalu banyak sehingga diputuskan untuk menghapusnya. Selain itu, karena jumlah yang tidak terlalu banyak sehingga tidak terlalu mempengaruhi fitur atau hilangnya informasi yang dibutuhkan. 
+
 Berikut ini merupakan visualisasi dari data fitur yang digunakan :
 - open,
 
@@ -250,27 +256,34 @@ Berikut ini merupakan visualisasi dari data fitur yang digunakan :
 ## Data Preparation
 
 Teknik preparation yang digunakan pada proyek ini antara lain :
-- Menghilangkan data yang bernilai 0 atau kosong
-  
-  ![image](https://user-images.githubusercontent.com/68459186/139034942-5b1ea3b5-439d-4e8a-a4a3-889ef4df4488.png)
-  
-  Bisa dilihat pada gambar diatas menunjukan jumlah nilai yang kosong atau NaN yang terdapat pada data dikarenakan jumlahnya tidak terlalu banyak sehingga diputuskan untuk menghapusnya. Selain itu, karena jumlah yang tidak terlalu banyak sehingga tidak terlalu mempengaruhi fitur atau hilangnya informasi yang dibutuhkan. 
-  
-- Normalisasi
-  Normalisasi dilakukan dengan tujuan untuk mengubah nilai kolom numerik dalam data ke skala yang sama, tanpa mengganggu perbedaan dalam rentang nilai. Normalisasi dilakukan pada fitur-fitur yang akan digunakan. Proses normalisasi dilakukan menggunakan fungsi MinMaxScaler dari sklearn.
 
 - Train-Test-Split 
-  Dilakukan pembagian dataset menjadi 3 bagian, yaitu data latih, data validasi, dan data uji. Pertama, dilakukan pengambilan data untuk validasi sebanyak 89 data terakhir pada setiap variabel. Kemudian sisanya dibagi menjadi data latih dan data uji dengan perbandingan 80:20. Data latih digunakan untuk proses pelatihan model dengan data sebanyak 80% dari dataset yang sudah dikurangi, sedangkan data uji digunakan untuk menguji model yang sudah dilatih, serta data validasi digunakan untuk mengecek akurasi dari model yang sudah dilatih sebelum digunakan pada data uji. Pembagian dataset dilakukan menggunakan fungsi train_test_split dari sklearn. 
+  Dilakukan pembagian dataset menjadi 3 bagian, yaitu data latih, data validasi dan data uji. Pertama, dilakukan pembagian menjadi data latih dan data uji dengan perbandingan 80:20.  Setelah pembagian dataset dilakukan pengurutan karena data hasil pembagian berbentuk acak sehingga perlu diurutkan kembali berdasarkan urutan waktu agar data yang akan digunakan sesuai dengan kondisi aslinya. Kemudian, mengambil data latih untuk validasi sebanyak 89 data terakhir pada setiap variabel. Data latih digunakan untuk proses pelatihan model dengan data sebanyak 80% dari dataset yang kemudian dikurangi untuk data validasi, sedangkan data uji sebanyak 20% dari dataset digunakan untuk menguji model yang sudah dilatih, serta data validasi digunakan untuk mengecek akurasi dari model yang sudah dilatih sebelum digunakan untuk prediksi pada data uji. Pembagian dataset dilakukan menggunakan fungsi train_test_split dari sklearn.
+
+- Normalisasi
+  Normalisasi dilakukan dengan tujuan untuk mengubah nilai kolom numerik dalam data ke skala yang sama, tanpa mengganggu perbedaan dalam rentang nilai. Normalisasi dilakukan pada fitur-fitur yang akan digunakan. Proses normalisasi dilakukan menggunakan fungsi MinMaxScaler dari sklearn. Proses normalisasi dilakukan setelah pembagian data dengan tujuan menghindari kebocoran data pada data uji. 
 
 ## Modeling
 
-Pada pemodelan menggunakan beberapa algoritma sebagai berikut :
-- Decision Tree Regression,  
-- Support Vector Regressor, Support Vector Machine juga dapat digunakan sebagai metode regresi, mempertahankan semua fitur utama yang menjadi ciri algoritma (margin maksimal). Support Vector Regression (SVR) menggunakan prinsip yang sama dengan SVM untuk klasifikasi, dengan hanya beberapa perbedaan kecil. Pertama-tama, karena keluaran adalah bilangan real, menjadi sangat sulit untuk memprediksi informasi yang ada, yang memiliki kemungkinan tak terbatas. Dalam kasus regresi, margin toleransi (epsilon) diatur dalam perkiraan ke SVM yang akan sudah diminta dari masalah. Tapi selain fakta ini, ada juga alasan yang lebih rumit, algoritmanya lebih rumit sehingga harus dipertimbangkan. Namun, ide utamanya selalu sama: untuk meminimalkan kesalahan, individualisasi hyperplane yang memaksimalkan margin, dengan mengingat bahwa bagian dari kesalahan ditoleransi.
+Pada proses pemodelan menggunakan beberapa algoritma sebagai berikut:
+- Decision Tree Regression,
+  - Cara kerja, 
+  - Parameter yang digunakan  
+- Support Vector Regressor,
+  - Cara kerja, 
+  - Parameter yang digunakan 
 - Random Forest, 
-- LassoCV dan RidgeCV, 
+  - Cara kerja, 
+  - Parameter yang digunakan
+- LassoCV dan RidgeCV,
+  - Cara kerja, 
+  - Parameter yang digunakan
 - Gradient Boosting Regressor,
-- Stochastic Gradient Descent,  
+  - Cara kerja, 
+  - Parameter yang digunakan
+- Stochastic Gradient Descent, 
+  - Cara kerja, 
+  - Parameter yang digunakan 
 
 ## Evaluation
 
@@ -281,15 +294,15 @@ Matrik evaluasi yang digunakan :
 
 Berikut ini merupakan hasil dari proses pemodelan yang telah dilakukan menggunakan beberapa algoritma, model dilatih menggunakan data latih dan dicoba memprediksi pada data validasi yang dapat dilihat pada gambar visualisasi berikut ini.
   
-![image](https://user-images.githubusercontent.com/68459186/139044524-76a204b6-f169-4a03-a9d3-f67edfe6a153.png)
+
 
 Berikut ini grafik yang digunakan untuk membandingkan nilai RMSE dari setiap model yang telah dibuat.
 
-![image](https://user-images.githubusercontent.com/68459186/139089280-5cf54886-3f46-4b24-87f4-eb132104fea9.png)
+
 
 Dari data diatas sehingga dibuat sebuah tabel untuk mengurutkan algoritma dengan performa tinggi ke rendah, sebagai berikut ini. 
 
-![image](https://user-images.githubusercontent.com/68459186/139089080-cd43ad37-46cc-49d7-8f36-8a5efbb84fc7.png)
+
 
 Dari hasil yang didapatkan dari pembuatan beberapa model diatas maka didapatkan nilai RMSE dan R2 Score seperti diatas. Sehingga dapat digunakan model dengan nilai RMSE terendah dan R2 Score yang tinggi yang memiliki performa yang baik untuk digunakan sebagai model prediksi harga emas. Model yang mungkin cocok untuk digunakan adalah LassoCV, SVR yang diberikan Hyperparameter Tuning, dan RidgeCV. 
 
