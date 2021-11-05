@@ -266,17 +266,11 @@ Teknik preparation yang digunakan pada proyek ini antara lain :
 ## Modeling
 
 Pada proses pemodelan menggunakan beberapa algoritma sebagai berikut:
-- Decision Tree Regression,
-  - Cara kerja, 
-  - Parameter yang digunakan  
-- Support Vector Regressor,
-  - Cara kerja, 
-  - Parameter yang digunakan 
-- Random Forest, 
-  - Cara kerja, 
-  - Parameter yang digunakan
-- LassoCV dan RidgeCV,
-  - Cara kerja, 
+- Decision Tree Regression, cara kerjanya dengan cara membagi data menjadi himpunan bagian berdasarkan variabel inputnya, metode pengambilan keputusan dengan cara melihat nilai probabilitas yang terstruktur dan sistematis untuk sampai pada kesimpulan yang tepat. Parameter yang digunakan adalah 'random_state=0' untuk mengatur generator angka acak yang digunakan. 
+- Support Vector Regressor, pada SVR dataset dimasukkan ke dalam satu zona dengan tetap meminimasi nilai epsilon, kemudian buat kernel untuk memplot data. Kemudian, dilakukan perhitungan kernel untuk menentukan nilai tengah dan nilai batas atas dan bawah. Jarak antara garis tengan dengan garis batas disebut epsilon. Tujuan akhirnya untuk membuat satu kluster yang masuk kriteria. Parameter yang digunakan adalah 'kernel='linear'' untuk merepresentasikan data berupa vector, fungsi kernel liner seperti berikut ![image](https://user-images.githubusercontent.com/68459186/140456247-ba382bd3-b62a-493c-bb66-0aa0b3403730.png).
+- Random Forest, prinsip dasar seperti decision tree. Random forest terdiri dari beberapa decision tree yang akan menghasilkan output yang berbeda-beda, lalu random forest akan melakukan voting untuk menentukan hasil mayoritas dari semua decision tree. Parameter yang digunakan adalah 'n_estimators=50' berarti jumlah pohon di hutan yang digunakan berjumlah 50 dan 'random_state=0' untuk mengatur generator angka acak yang digunakan. 
+- LassoCV,
+- RidgeCV, 
   - Parameter yang digunakan
 - Gradient Boosting Regressor,
   - Cara kerja, 
