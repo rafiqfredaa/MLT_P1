@@ -265,11 +265,11 @@ Berikut ini merupakan visualisasi dari data fitur yang digunakan :
 
 Teknik preparation yang digunakan pada proyek ini antara lain :
 - Menangani Missing Value
-Menghilangkan data yang bernilai 0 atau kosong
+  Menghilangkan data yang bernilai 0 atau kosong
   
-![image](https://user-images.githubusercontent.com/68459186/139034942-5b1ea3b5-439d-4e8a-a4a3-889ef4df4488.png)
+  ![image](https://user-images.githubusercontent.com/68459186/139034942-5b1ea3b5-439d-4e8a-a4a3-889ef4df4488.png)
   
-Bisa dilihat pada gambar diatas menunjukan jumlah nilai yang kosong atau NaN yang terdapat pada data dikarenakan jumlahnya tidak terlalu banyak sehingga diputuskan untuk menghapusnya. Selain itu, karena jumlah yang tidak terlalu banyak sehingga tidak terlalu mempengaruhi fitur atau hilangnya informasi yang dibutuhkan. 
+  Bisa dilihat pada gambar diatas menunjukan jumlah nilai yang kosong atau NaN yang terdapat pada data dikarenakan jumlahnya tidak terlalu banyak sehingga diputuskan untuk menghapusnya. Selain itu, karena jumlah yang tidak terlalu banyak sehingga tidak terlalu mempengaruhi fitur atau hilangnya informasi yang dibutuhkan. 
 
 - Train-Test-Split 
   Dilakukan pembagian dataset menjadi s bagian, yaitu data latih dan data uji. Pertama, dilakukan pembagian menjadi data latih dan data uji dengan perbandingan 80:20. Setelah pembagian dataset dilakukan pengurutan karena data hasil pembagian berbentuk acak sehingga perlu diurutkan kembali berdasarkan urutan waktu agar data yang akan digunakan sesuai dengan kondisi aslinya. Data latih digunakan untuk proses pelatihan model dengan data sebanyak 80% dari dataset, sedangkan data uji sebanyak 20% dari dataset digunakan untuk menguji model yang sudah dilatih. Pembagian dataset dilakukan menggunakan fungsi train_test_split dari sklearn.
