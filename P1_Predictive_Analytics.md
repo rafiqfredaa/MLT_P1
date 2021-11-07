@@ -215,13 +215,6 @@ Sehingga fitur yang digunakan bertambah dengan adanya hasil perhitungan yang dil
 - dif_adj close, selisih nilai antara data periode 26 dengan periode 12 pada adj close
 - macd_adj close, 
 
-### Menangani Missing Value
-Menghilangkan data yang bernilai 0 atau kosong
-  
-![image](https://user-images.githubusercontent.com/68459186/139034942-5b1ea3b5-439d-4e8a-a4a3-889ef4df4488.png)
-  
-Bisa dilihat pada gambar diatas menunjukan jumlah nilai yang kosong atau NaN yang terdapat pada data dikarenakan jumlahnya tidak terlalu banyak sehingga diputuskan untuk menghapusnya. Selain itu, karena jumlah yang tidak terlalu banyak sehingga tidak terlalu mempengaruhi fitur atau hilangnya informasi yang dibutuhkan. 
-
 ### Memvisualisasikan Data
 Berikut ini merupakan visualisasi dari data fitur yang digunakan :
 - open,
@@ -271,9 +264,15 @@ Berikut ini merupakan visualisasi dari data fitur yang digunakan :
 ## Data Preparation
 
 Teknik preparation yang digunakan pada proyek ini antara lain :
+- Menangani Missing Value
+Menghilangkan data yang bernilai 0 atau kosong
+  
+![image](https://user-images.githubusercontent.com/68459186/139034942-5b1ea3b5-439d-4e8a-a4a3-889ef4df4488.png)
+  
+Bisa dilihat pada gambar diatas menunjukan jumlah nilai yang kosong atau NaN yang terdapat pada data dikarenakan jumlahnya tidak terlalu banyak sehingga diputuskan untuk menghapusnya. Selain itu, karena jumlah yang tidak terlalu banyak sehingga tidak terlalu mempengaruhi fitur atau hilangnya informasi yang dibutuhkan. 
 
 - Train-Test-Split 
-  Dilakukan pembagian dataset menjadi s bagian, yaitu data latih dan data uji. Pertama, dilakukan pembagian menjadi data latih dan data uji dengan perbandingan 80:20.  Setelah pembagian dataset dilakukan pengurutan karena data hasil pembagian berbentuk acak sehingga perlu diurutkan kembali berdasarkan urutan waktu agar data yang akan digunakan sesuai dengan kondisi aslinya. Data latih digunakan untuk proses pelatihan model dengan data sebanyak 80% dari dataset, sedangkan data uji sebanyak 20% dari dataset digunakan untuk menguji model yang sudah dilatih. Pembagian dataset dilakukan menggunakan fungsi train_test_split dari sklearn.
+  Dilakukan pembagian dataset menjadi s bagian, yaitu data latih dan data uji. Pertama, dilakukan pembagian menjadi data latih dan data uji dengan perbandingan 80:20. Setelah pembagian dataset dilakukan pengurutan karena data hasil pembagian berbentuk acak sehingga perlu diurutkan kembali berdasarkan urutan waktu agar data yang akan digunakan sesuai dengan kondisi aslinya. Data latih digunakan untuk proses pelatihan model dengan data sebanyak 80% dari dataset, sedangkan data uji sebanyak 20% dari dataset digunakan untuk menguji model yang sudah dilatih. Pembagian dataset dilakukan menggunakan fungsi train_test_split dari sklearn.
 
 - Normalisasi
   Normalisasi dilakukan dengan tujuan untuk mengubah nilai kolom numerik dalam data ke skala yang sama, tanpa mengganggu perbedaan dalam rentang nilai. Normalisasi dilakukan pada fitur-fitur yang akan digunakan. Proses normalisasi dilakukan menggunakan fungsi MinMaxScaler dari sklearn. Proses normalisasi dilakukan setelah pembagian data dengan tujuan menghindari kebocoran data pada data uji. 
